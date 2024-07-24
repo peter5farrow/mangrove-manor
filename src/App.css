@@ -38,10 +38,17 @@ h5,
 h6 {
   overflow-wrap: break-word;
   text-align: center;
-  margin: 200px;
+
+  /* to be moved */
+  margin: 20px;
 }
 
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* to be moved */
+#text-box {
+  text-align: center;
 }

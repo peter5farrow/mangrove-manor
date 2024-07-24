@@ -1,6 +1,8 @@
 import express from "express";
+import session from "express-session";
 import morgan from "morgan";
 import ViteExpress from "vite-express";
+import { Scene } from "./model";
 
 const app = express();
 const port = "8000";

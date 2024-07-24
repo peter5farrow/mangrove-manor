@@ -6,45 +6,33 @@ export const db = await connectToDB(
   "postgresql://postgres:postgres@/mangrove-manor"
 );
 
-export class Character extends Model {
+export class Scene extends Model {
   [util.inspect.custom]() {
     return this.toJSON();
   }
 }
-Character.init(
+Scene.init(
   {
-    characterId: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
+    sceneName: {
+      type: DataTypes.STRING,
+      allowNull: false,
       primaryKey: true,
     },
-    firstName: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    textBox: {
+      type: DataTypes.TEXT,
     },
-    lastName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    isGuilty: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-    age: {
-      type: DataTypes.INTEGER,
-    },
-    hairColor: {
+    leftButton: {
       type: DataTypes.STRING,
     },
-    // favFood: {
-    //   type: DataTypes.STRING,
-    // },
-    // occupation: {
-    //   type: DataTypes.STRING,
-    // },
+    rightButton: {
+      type: DataTypes.STRING,
+    },
+    graphicPath: {
+      type: DataTypes.TEXT,
+    },
   },
   {
-    modelName: "character",
+    modelName: "scene",
     sequelize: db,
   }
 );
@@ -89,6 +77,43 @@ Job.init(
   },
   {
     modelName: "job",
+    sequelize: db,
+  }
+);
+
+export class Character extends Model {
+  [util.inspect.custom]() {
+    return this.toJSON();
+  }
+}
+Character.init(
+  {
+    characterId: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    isGuilty: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    age: {
+      type: DataTypes.INTEGER,
+    },
+    hairColor: {
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    modelName: "character",
     sequelize: db,
   }
 );
