@@ -1,0 +1,42 @@
+[
+  {
+    "firstName": "Lauren",
+    "lastName": "Koh",
+    "age": 55,
+    "hairColor": "black/white",
+    "favFood": "pretzels",
+    "jobTitle": "electrical engineer"
+  },
+  {
+    "firstName": "Carolyn",
+    "lastName": "Harrington",
+    "age": 40,
+    "hairColor": "brown",
+    "favFood": "chocolate-covered almonds",
+    "jobTitle": "author"
+  },
+  {
+    "firstName": "Ichiro",
+    "lastName": "Ishima",
+    "age": 29,
+    "hairColor": "black",
+    "favFood": "cherries",
+    "jobTitle": "elementary school teacher"
+  },
+  {
+    "firstName": "Mateo",
+    "lastName": "Yaro",
+    "age": 30,
+    "hairColor": "blonde",
+    "favFood": "couscous",
+    "jobTitle": "nurse"
+  },
+  {
+    "firstName": "Bobbi",
+    "lastName": "Thomas",
+    "age": 24,
+    "hairColor": "red",
+    "favFood": "chicken nuggets",
+    "jobTitle": "hair stylist"
+  }
+]
