@@ -13,21 +13,21 @@ export class Scene extends Model {
 }
 Scene.init(
   {
-    sceneName: {
+    scene_name: {
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
     },
-    textBox: {
+    scene_prompt: {
       type: DataTypes.TEXT,
     },
-    leftButton: {
+    left_button_option: {
       type: DataTypes.STRING,
     },
-    rightButton: {
+    right_button_option: {
       type: DataTypes.STRING,
     },
-    graphicPath: {
+    graphic_path: {
       type: DataTypes.TEXT,
     },
   },
@@ -44,12 +44,12 @@ export class Food extends Model {
 }
 Food.init(
   {
-    favFood: {
+    food_name: {
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
     },
-    foodClue: {
+    food_clue: {
       type: DataTypes.STRING,
     },
   },
@@ -66,12 +66,12 @@ export class Job extends Model {
 }
 Job.init(
   {
-    jobTitle: {
+    job_title: {
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
     },
-    jobClue: {
+    job_clue: {
       type: DataTypes.TEXT,
     },
   },
@@ -88,28 +88,42 @@ export class Character extends Model {
 }
 Character.init(
   {
-    characterId: {
+    character_id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    firstName: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastName: {
+    last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    isGuilty: {
+    is_guilty: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
     age: {
       type: DataTypes.INTEGER,
     },
-    hairColor: {
+    hair_color: {
       type: DataTypes.STRING,
+    },
+    fav_food: {
+      type: DataTypes.STRING,
+      references: {
+        model: "food",
+        key: "food_name",
+      },
+    },
+    occupation: {
+      type: DataTypes.STRING,
+      references: {
+        model: "jobs",
+        key: "job_title",
+      },
     },
   },
   {
@@ -118,8 +132,19 @@ Character.init(
   }
 );
 
-Food.hasMany(Character, { foreignKey: "favFood" });
-Character.belongsTo(Food, { foreignKey: "favFood" });
+// Food.hasMany(Character, { foreignKey: "fav_food" });
+// Character.belongsTo(Food, { foreignKey: "fav_food" });
 
-Job.hasMany(Character, { foreignKey: "jobTitle" });
-Character.belongsTo(Job, { foreignKey: "jobTitle" });
+// Job.hasMany(Character, { foreignKey: "job_title" });
+// Character.belongsTo(Job, { foreignKey: "job_title" });
+
+Character.belongsTo(Food, {
+  foreignKey: "fav_food",
+  targetKey: "food_name",
+  as: "favorite_food",
+});
+Character.belongsTo(Job, {
+  foreignKey: "occupation",
+  targetKey: "job_title",
+  as: "job",
+});

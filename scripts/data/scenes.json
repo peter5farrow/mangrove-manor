@@ -1,9 +1,9 @@
 [
   {
-    "sceneName": "the kitchen",
-    "textBox": "You find a golden blonde hair on the kitchen table. Where to next?",
-    "leftButton": "Study",
-    "rightButton": "Laundry room",
-    "graphicPath": "url here"
+    "scene_name": "the kitchen",
+    "scene_prompt": "You find a golden blonde hair on the kitchen table. Where to next?",
+    "left_button_option": "Study",
+    "right_button_option": "Laundry room",
+    "graphic_path": "url here"
   }
 ]

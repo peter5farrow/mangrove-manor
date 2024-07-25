@@ -1,22 +1,22 @@
 [
   {
-    "favFood": "chocolate-covered almonds",
-    "foodClue": "a small brown flake"
+    "food_name": "chocolate-covered almonds",
+    "food_clue": "a small brown flake"
   },
   {
-    "favFood": "cherries",
-    "foodClue": "a stem tied in a knot"
+    "food_name": "cherries",
+    "food_clue": "a stem tied in a knot"
   },
   {
-    "favFood": "pretzels",
-    "foodClue": "one grain of salt"
+    "food_name": "pretzels",
+    "food_clue": "one grain of salt"
   },
   {
-    "favFood": "chicken nuggets",
-    "foodClue": "what looked to be a bread crumb"
+    "food_name": "chicken nuggets",
+    "food_clue": "what looked to be a bread crumb"
   },
   {
-    "favFood": "couscous",
-    "foodClue": "a miniscule yellow speck"
+    "food_name": "couscous",
+    "food_clue": "a miniscule yellow speck"
   }
 ]

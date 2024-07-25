@@ -12,14 +12,20 @@ console.log("Seeding database...");
 
 const scenesInDB = await Promise.all(
   sceneData.map((scene) => {
-    const { sceneName, textBox, leftButton, rightButton, graphicPath } = scene;
+    const {
+      scene_name,
+      scene_prompt,
+      left_button_option,
+      right_button_option,
+      graphic_path,
+    } = scene;
 
     const newScene = Scene.create({
-      sceneName,
-      textBox,
-      leftButton,
-      rightButton,
-      graphicPath,
+      scene_name,
+      scene_prompt,
+      left_button_option,
+      right_button_option,
+      graphic_path,
     });
 
     return newScene;
@@ -28,11 +34,11 @@ const scenesInDB = await Promise.all(
 
 const foodsInDB = await Promise.all(
   foodData.map((food) => {
-    const { favFood, foodClue } = food;
+    const { food_name, food_clue } = food;
 
     const newFood = Food.create({
-      favFood,
-      foodClue,
+      food_name,
+      food_clue,
     });
 
     return newFood;
@@ -41,11 +47,11 @@ const foodsInDB = await Promise.all(
 
 const jobsInDB = await Promise.all(
   jobData.map((job) => {
-    const { jobTitle, jobClue } = job;
+    const { job_title, job_clue } = job;
 
     const newJob = Job.create({
-      jobTitle,
-      jobClue,
+      job_title,
+      job_clue,
     });
 
     return newJob;
@@ -53,16 +59,16 @@ const jobsInDB = await Promise.all(
 );
 const charactersInDB = await Promise.all(
   characterData.map((character) => {
-    const { firstName, lastName, age, hairColor, favFood, jobTitle } =
+    const { first_name, last_name, age, hair_color, fav_food, occupation } =
       character;
 
     const newChar = Character.create({
-      firstName,
-      lastName,
+      first_name,
+      last_name,
       age,
-      hairColor,
-      favFood,
-      jobTitle,
+      hair_color,
+      fav_food,
+      occupation,
     });
 
     return newChar;

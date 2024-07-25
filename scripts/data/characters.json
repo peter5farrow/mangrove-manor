@@ -1,42 +1,42 @@
 [
   {
-    "firstName": "Lauren",
-    "lastName": "Koh",
+    "first_name": "Lauren",
+    "last_name": "Koh",
     "age": 55,
-    "hairColor": "black/white",
-    "favFood": "pretzels",
-    "jobTitle": "electrical engineer"
+    "hair_color": "black/white",
+    "fav_food": "pretzels",
+    "occupation": "electrical engineer"
   },
   {
-    "firstName": "Carolyn",
-    "lastName": "Harrington",
+    "first_name": "Carolyn",
+    "last_name": "Harrington",
     "age": 40,
-    "hairColor": "brown",
-    "favFood": "chocolate-covered almonds",
-    "jobTitle": "author"
+    "hair_color": "brown",
+    "fav_food": "chocolate-covered almonds",
+    "occupation": "author"
   },
   {
-    "firstName": "Ichiro",
-    "lastName": "Ishima",
+    "first_name": "Ichiro",
+    "last_name": "Ishima",
     "age": 29,
-    "hairColor": "black",
-    "favFood": "cherries",
-    "jobTitle": "elementary school teacher"
+    "hair_color": "black",
+    "fav_food": "cherries",
+    "occupation": "elementary school teacher"
   },
   {
-    "firstName": "Mateo",
-    "lastName": "Yaro",
+    "first_name": "Mateo",
+    "last_name": "Yaro",
     "age": 30,
-    "hairColor": "blonde",
-    "favFood": "couscous",
-    "jobTitle": "nurse"
+    "hair_color": "blonde",
+    "fav_food": "couscous",
+    "occupation": "nurse"
   },
   {
-    "firstName": "Bobbi",
-    "lastName": "Thomas",
+    "first_name": "Bobbi",
+    "last_name": "Thomas",
     "age": 24,
-    "hairColor": "red",
-    "favFood": "chicken nuggets",
-    "jobTitle": "hair stylist"
+    "hair_color": "red",
+    "fav_food": "chicken nuggets",
+    "occupation": "hair stylist"
   }
 ]

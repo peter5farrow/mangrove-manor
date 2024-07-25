@@ -1,22 +1,22 @@
 [
   {
-    "jobTitle": "electrical engineer",
-    "jobClue": "a little piece of metal"
+    "job_title": "electrical engineer",
+    "job_clue": "a little piece of metal"
   },
   {
-    "jobTitle": "author",
-    "jobClue": "an ink stain"
+    "job_title": "author",
+    "job_clue": "an ink stain"
   },
   {
-    "jobTitle": "hair stylist",
-    "jobClue": "some clear, gel-like substance"
+    "job_title": "hair stylist",
+    "job_clue": "some clear, gel-like substance"
   },
   {
-    "jobTitle": "nurse",
-    "jobClue": "a white bracelet"
+    "job_title": "nurse",
+    "job_clue": "a white bracelet"
   },
   {
-    "jobTitle": "elementary school teacher",
-    "jobClue": "a bit of wax"
+    "job_title": "elementary school teacher",
+    "job_clue": "a bit of wax"
   }
 ]
