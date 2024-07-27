@@ -5,5 +5,12 @@
     "left_button_option": "Study",
     "right_button_option": "Laundry room",
     "graphic_path": "url here"
+  },
+  {
+    "scene_name": "the study",
+    "scene_prompt": "You find some couscous on the desk. OK, time to guess!",
+    "left_button_option": "leggo",
+    "right_button_option": "",
+    "graphic_path": "url here"
   }
 ]

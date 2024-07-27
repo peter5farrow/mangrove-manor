@@ -13,10 +13,14 @@ export class Scene extends Model {
 }
 Scene.init(
   {
+    scene_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     scene_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
     },
     scene_prompt: {
       type: DataTypes.TEXT,
