@@ -1,7 +1,7 @@
-export default function LeftButton() {
+export default function LeftButton({ text }) {
   return (
     <>
-      <button id="left-button">left button</button>
+      <button id="left-button">{text}</button>
     </>
   );
 }

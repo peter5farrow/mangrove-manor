@@ -23,6 +23,18 @@ app.get("/api/scenes", async (req, res) => {
   res.json(allScenes);
 });
 
+//player name input
+app.post("/api/player_name", async (req, res) => {
+  const { name } = req.body;
+  if (name) {
+    req.session.name = name;
+    console.log(req.session.name);
+    res.send({ success: true });
+  } else {
+    res.send({ success: false });
+  }
+});
+
 //get one scene by id
 app.get("/api/scenes/:scene_id", async (req, res) => {
   const { scene_id } = req.params;

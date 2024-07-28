@@ -19,8 +19,11 @@ export default function CluesTab({ name, ...props }) {
           <Button onClick={handleClose}>x</Button>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <ul>
+            <li>clue</li>
+            <li>another clue</li>
+            <li>and another one</li>
+          </ul>
         </Offcanvas.Body>
       </Offcanvas>
     </>

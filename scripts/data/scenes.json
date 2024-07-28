@@ -1,14 +1,21 @@
 [
   {
-    "scene_name": "the kitchen",
+    "scene_name": "kitchen",
     "scene_prompt": "You find a golden blonde hair on the kitchen table. Where to next?",
     "left_button_option": "Study",
     "right_button_option": "Laundry room",
+    "graphic_path": "https://img.icons8.com/?size=100&id=2797&format=png&color=206332"
+  },
+  {
+    "scene_name": "study",
+    "scene_prompt": "You find some couscous on the desk. OK, time to guess!",
+    "left_button_option": "leggo",
+    "right_button_option": "",
     "graphic_path": "url here"
   },
   {
-    "scene_name": "the study",
-    "scene_prompt": "You find some couscous on the desk. OK, time to guess!",
+    "scene_name": "laundry room",
+    "scene_prompt": "You find some couscous on the dryer. OK, time to guess!",
     "left_button_option": "leggo",
     "right_button_option": "",
     "graphic_path": "url here"

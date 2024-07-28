@@ -1,7 +1,7 @@
-export default function RightButton() {
+export default function RightButton({ text }) {
   return (
     <>
-      <button id="right-button">right button</button>
+      <button id="right-button">{text}</button>
     </>
   );
 }

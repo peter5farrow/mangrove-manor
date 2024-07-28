@@ -1,7 +1,7 @@
-export default function PromptTextBox() {
+export default function PromptTextBox({ prompt }) {
   return (
     <>
-      <div id="prompt-text-box">SCENE GOES HERE...</div>
+      <div id="prompt-text-box">{prompt}</div>
     </>
   );
 }

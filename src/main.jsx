@@ -9,9 +9,25 @@ import {
 import axios from "axios";
 import App from "./App.jsx";
 import "./index.css";
+import HomePage from "./pages/HomePage.jsx";
+import SceneLayout from "./pages/SceneLayout.jsx";
+import SceneData from "../scripts/data/scenes.json";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<App />}></Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route index element={<HomePage />} />
+      <Route
+        path="/scene/:sceneId"
+        element={<SceneLayout />}
+        loader={async ({ params }) => {
+          const res = await axios.get(`/api/scenes/${params.sceneId}`);
+          console.log(res.data);
+          return { scene: res.data };
+        }}
+      />
+    </Route>
+  )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
