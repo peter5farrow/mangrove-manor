@@ -30,12 +30,12 @@ export default function CluesTab({ name, ...props }) {
   );
 }
 
-function Example() {
-  return (
-    <>
-      {["start", "end", "top", "bottom"].map((placement, idx) => (
-        <OffCanvasExample key={idx} placement={placement} name={placement} />
-      ))}
-    </>
-  );
-}
+// function Example() {
+//   return (
+//     <>
+//       {["start", "end", "top", "bottom"].map((placement, idx) => (
+//         <OffCanvasExample key={idx} placement={placement} name={placement} />
+//       ))}
+//     </>
+//   );
+// }

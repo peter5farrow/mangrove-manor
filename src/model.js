@@ -15,21 +15,25 @@ Scene.init(
   {
     scene_id: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
       primaryKey: true,
     },
     scene_name: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     scene_prompt: {
       type: DataTypes.TEXT,
     },
-    left_button_option: {
+    left_scene_name: {
       type: DataTypes.STRING,
     },
-    right_button_option: {
+    left_scene_id: {
+      type: DataTypes.INTEGER,
+    },
+    right_scene_name: {
       type: DataTypes.STRING,
+    },
+    right_scene_id: {
+      type: DataTypes.INTEGER,
     },
     graphic_path: {
       type: DataTypes.TEXT,

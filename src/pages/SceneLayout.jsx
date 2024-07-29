@@ -3,31 +3,44 @@ import PromptTextBox from "../components/PromptTextBox";
 import LeftButton from "../components/LeftButton";
 import RightButton from "../components/RightButton";
 import CluesTab from "../components/CluesTab";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
 export default function SceneLayout() {
   const {
     scene: {
-      scene_name,
+      scene_id,
       scene_prompt,
-      left_button_option,
-      right_button_option,
+      left_scene_name,
+      left_scene_id,
+      right_scene_name,
+      right_scene_id,
       graphic_path,
-      player_name,
     },
   } = useLoaderData();
 
-  const handleSceneChange = async (e, scene_id) => {
-    const res = await axios.get(`/api/scene/${scene_id}`);
+  // const [sceneIdState, setSceneIdState] = useState(1);
+  const navigate = useNavigate();
+
+  const handleSceneChange = async (scene_id) => {
     navigate(`/scene/${scene_id}`);
   };
 
   return (
     <>
       <Graphic path={graphic_path} />
-      <PromptTextBox playerName={player_name} prompt={scene_prompt} />
-      <LeftButton text={left_button_option} onClick={handleSceneChange} />
-      <RightButton text={right_button_option} onClick={handleSceneChange} />
+      <PromptTextBox prompt={scene_prompt} />
+      <LeftButton
+        text={left_scene_name}
+        optionId={left_scene_id}
+        onClick={handleSceneChange}
+      />
+      <RightButton
+        text={right_scene_name}
+        optionId={right_scene_id}
+        onClick={handleSceneChange}
+      />
       <CluesTab />
     </>
   );

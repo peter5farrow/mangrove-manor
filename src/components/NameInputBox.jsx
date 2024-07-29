@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function NameInputBox({ onInput }) {
   const [name, setName] = useState("");
+
   return (
     <form
       onSubmit={(e) => {

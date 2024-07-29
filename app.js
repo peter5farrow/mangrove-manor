@@ -28,14 +28,19 @@ app.post("/api/player_name", async (req, res) => {
   const { name } = req.body;
   if (name) {
     req.session.name = name;
-    console.log(req.session.name);
     res.send({ success: true });
   } else {
     res.send({ success: false });
   }
 });
 
-//get one scene by id
+//get player name
+app.get("/api/player_name", async (req, res) => {
+  const playerName = req.session.name;
+  res.send({ name: playerName });
+});
+
+//get scene by id
 app.get("/api/scenes/:scene_id", async (req, res) => {
   const { scene_id } = req.params;
   const scene = await Scene.findByPk(scene_id);

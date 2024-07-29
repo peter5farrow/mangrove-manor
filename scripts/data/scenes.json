@@ -1,23 +1,52 @@
 [
   {
-    "scene_name": "kitchen",
-    "scene_prompt": "You find a golden blonde hair on the kitchen table. Where to next?",
-    "left_button_option": "Study",
-    "right_button_option": "Laundry room",
+    "scene_id": 1,
+    "scene_name": "Intro",
+    "scene_prompt": "Welcome Player to Mangrove Manor. Here are some rules to help you on your journey: etc etc etc",
+    "left_scene_name": "Continue",
+    "left_scene_id": 2,
+    "right_scene_name": null,
+    "right_scene_id": 1,
     "graphic_path": "https://img.icons8.com/?size=100&id=2797&format=png&color=206332"
   },
   {
-    "scene_name": "study",
-    "scene_prompt": "You find some couscous on the desk. OK, time to guess!",
-    "left_button_option": "leggo",
-    "right_button_option": "",
-    "graphic_path": "url here"
+    "scene_id": 2,
+    "scene_name": "Kitchen",
+    "scene_prompt": "You find a golden blonde hair on the kitchen table. Where to next?",
+    "left_scene_name": "Study",
+    "left_scene_id": 3,
+    "right_scene_name": "Laundry room",
+    "right_scene_id": 4,
+    "graphic_path": "https://img.icons8.com/?size=100&id=25131&format=png&color=9C2904"
   },
   {
-    "scene_name": "laundry room",
+    "scene_id": 3,
+    "scene_name": "Study",
+    "scene_prompt": "You find some couscous on the desk. OK, time to guess!",
+    "left_scene_name": "Finish this",
+    "left_scene_id": 5,
+    "right_scene_name": null,
+    "right_scene_id": 1,
+    "graphic_path": "https://img.icons8.com/?size=100&id=7722&format=png&color=000000"
+  },
+  {
+    "scene_id": 4,
+    "scene_name": "Laundry room",
     "scene_prompt": "You find some couscous on the dryer. OK, time to guess!",
-    "left_button_option": "leggo",
-    "right_button_option": "",
-    "graphic_path": "url here"
+    "left_scene_name": "Finish this",
+    "left_scene_id": 5,
+    "right_scene_name": null,
+    "right_scene_id": 1,
+    "graphic_path": "https://img.icons8.com/?size=100&id=66970&format=png&color=04589C"
+  },
+  {
+    "scene_id": 5,
+    "scene_name": "sample end",
+    "scene_prompt": "sample end",
+    "left_scene_name": "Play Again",
+    "left_scene_id": 1,
+    "right_scene_name": null,
+    "right_scene_id": 1,
+    "graphic_path": "https://img.icons8.com/?size=100&id=8635&format=png&color=89898A"
   }
 ]

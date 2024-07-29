@@ -13,18 +13,24 @@ console.log("Seeding database...");
 const scenesInDB = await Promise.all(
   sceneData.map((scene) => {
     const {
+      scene_id,
       scene_name,
       scene_prompt,
-      left_button_option,
-      right_button_option,
+      left_scene_name,
+      left_scene_id,
+      right_scene_name,
+      right_scene_id,
       graphic_path,
     } = scene;
 
     const newScene = Scene.create({
+      scene_id,
       scene_name,
       scene_prompt,
-      left_button_option,
-      right_button_option,
+      left_scene_name,
+      left_scene_id,
+      right_scene_name,
+      right_scene_id,
       graphic_path,
     });
 

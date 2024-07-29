@@ -7,12 +7,12 @@ import axios from "axios";
 export default function HomePage() {
   const navigate = useNavigate();
 
-  const handleName = async (e, playerName) => {
+  const handleName = async (e, name) => {
     e.preventDefault();
-    const res = await axios.post("/api/player_name", playerName);
+    const res = await axios.post("/api/player_name", name);
     if (res.data.success) {
       navigate("/scene/1"); //this leads to first scene
-      console.log(playerName);
+      console.log(name);
     }
   };
 
