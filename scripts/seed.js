@@ -65,12 +65,22 @@ const jobsInDB = await Promise.all(
 );
 const charactersInDB = await Promise.all(
   characterData.map((character) => {
-    const { first_name, last_name, age, hair_color, fav_food, occupation } =
-      character;
-
-    const newChar = Character.create({
+    const {
+      character_id,
       first_name,
       last_name,
+      is_guilty,
+      age,
+      hair_color,
+      fav_food,
+      occupation,
+    } = character;
+
+    const newChar = Character.create({
+      character_id,
+      first_name,
+      last_name,
+      is_guilty,
       age,
       hair_color,
       fav_food,
@@ -82,8 +92,8 @@ const charactersInDB = await Promise.all(
 );
 console.log(foodsInDB);
 console.log(jobsInDB);
-console.log(charactersInDB);
 console.log(scenesInDB);
+console.log(charactersInDB);
 
 await db.close();
 console.log("Finished seeding database!");

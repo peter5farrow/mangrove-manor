@@ -12,6 +12,7 @@ import "./index.css";
 import HomePage from "./pages/HomePage.jsx";
 import SceneLayout from "./pages/SceneLayout.jsx";
 import SceneData from "../scripts/data/scenes.json";
+import GuessPage from "./pages/GuessPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,8 +23,16 @@ const router = createBrowserRouter(
         element={<SceneLayout />}
         loader={async ({ params }) => {
           const res = await axios.get(`/api/scenes/${params.sceneId}`);
-          console.log(res.data);
+          // console.log(res.data);
           return { scene: res.data };
+        }}
+      />
+      <Route
+        path="/guess"
+        element={<GuessPage />}
+        loader={async () => {
+          const res = await axios.get("/api/characters");
+          return { characters: res.data };
         }}
       />
     </Route>

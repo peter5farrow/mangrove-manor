@@ -20,21 +20,35 @@ export default function SceneLayout() {
     },
   } = useLoaderData();
 
-  // const [sceneIdState, setSceneIdState] = useState(1);
+  const [guiltyChar, setGuiltyChar] = useState({});
+
   const navigate = useNavigate();
 
   const handleSceneChange = async (scene_id) => {
+    if (scene_id === 2) {
+      const res = await axios.post("/api/characters", {
+        is_guilty: true,
+      });
+      setGuiltyChar(res.data);
+    }
+
     navigate(`/scene/${scene_id}`);
+    console.log(guiltyChar);
+  };
+
+  const handleLastScene = async () => {
+    navigate("/guess");
   };
 
   return (
     <>
       <Graphic path={graphic_path} />
-      <PromptTextBox prompt={scene_prompt} />
+      <PromptTextBox prompt={scene_prompt} guiltyChar={guiltyChar} />
       <LeftButton
         text={left_scene_name}
         optionId={left_scene_id}
         onClick={handleSceneChange}
+        onLastScene={handleLastScene}
       />
       <RightButton
         text={right_scene_name}
