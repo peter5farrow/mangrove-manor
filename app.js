@@ -2,7 +2,6 @@ import express from "express";
 import session from "express-session";
 import morgan from "morgan";
 import ViteExpress from "vite-express";
-import lodash from "lodash";
 import { Character, Food, Job, Scene } from "./src/model.js";
 
 const app = express();
@@ -62,32 +61,31 @@ app.get("/api/characters/:character_id", async (req, res) => {
 });
 
 //reset all characters to not guilty, then set random character to guilty
-app.post("/api/characters", async (req, res) => {
-  const { is_guilty } = req.body;
+// app.post("/api/characters", async (req, res) => {
+//   const { is_guilty } = req.body;
 
-  const allCharacters = await Character.findAll();
+//   const allCharacters = await Character.findAll();
 
-  for (const character of allCharacters) {
-    if (character.is_guilty === true) {
-      character.set({
-        is_guilty: false,
-      });
-      await character.save();
-    }
-  }
+//   for (const character of allCharacters) {
+//     if (character.is_guilty === true) {
+//       character.set({
+//         is_guilty: false,
+//       });
+//       await character.save();
+//     }
+//   }
 
-  const guiltyChar = await Character.findByPk(
-    lodash.random(1, 5 /* number of characters */)
-  );
+//   const guiltyChar = await Character.findByPk(
+//     lodash.random(1, 5 /* number of characters */)
+//   );
+//   guiltyChar.set({
+//     is_guilty: is_guilty,
+//   });
+//   await guiltyChar.save();
 
-  guiltyChar.set({
-    is_guilty: is_guilty,
-  });
-  await guiltyChar.save();
-
-  res.json(guiltyChar);
-  console.log(guiltyChar);
-});
+//   res.json(guiltyChar);
+//   console.log(guiltyChar);
+// });
 
 //get food by character id
 app.get("/api/food/:character_id", async (req, res) => {

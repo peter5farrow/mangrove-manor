@@ -6,6 +6,7 @@ import CluesTab from "../components/CluesTab";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import lodash from "lodash";
 
 export default function SceneLayout() {
   const {
@@ -20,21 +21,29 @@ export default function SceneLayout() {
     },
   } = useLoaderData();
 
-  const [guiltyChar, setGuiltyChar] = useState({});
-
   const navigate = useNavigate();
+  const [guiltyCharId, setGuiltyCharId] = useState(lodash.random(1, 5));
 
   const handleSceneChange = async (scene_id) => {
-    if (scene_id === 2) {
-      const res = await axios.post("/api/characters", {
-        is_guilty: true,
-      });
-      setGuiltyChar(res.data);
+    if (scene_id === 778) {
+      setGuiltyCharId(lodash.random(1, 5));
     }
-
     navigate(`/scene/${scene_id}`);
-    console.log(guiltyChar);
+    console.log(guiltyCharId);
   };
+
+  // const getFoodClue = async () => {
+  //   if (guiltyChar) {
+  //     const res = await axios.get(`/api/food/${guiltyChar.character_id}`);
+  //     return res.data.food_clue;
+  //   }
+  // };
+  // const getJobClue = async () => {
+  //   if (guiltyChar) {
+  //     const res = await axios.get(`/api/jobs/${guiltyChar.character_id}`);
+  //     return res.data.job_clue;
+  //   }
+  // };
 
   const handleLastScene = async () => {
     navigate("/guess");
@@ -43,7 +52,7 @@ export default function SceneLayout() {
   return (
     <>
       <Graphic path={graphic_path} />
-      <PromptTextBox prompt={scene_prompt} guiltyChar={guiltyChar} />
+      <PromptTextBox prompt={scene_prompt} guiltyChar={guiltyCharId} />
       <LeftButton
         text={left_scene_name}
         optionId={left_scene_id}
