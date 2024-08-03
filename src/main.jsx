@@ -13,6 +13,7 @@ import HomePage from "./pages/HomePage.jsx";
 import SceneLayout from "./pages/SceneLayout.jsx";
 import SceneData from "../scripts/data/scenes.json";
 import GuessPage from "./pages/GuessPage.jsx";
+import { GuiltyCharProvider } from "./contexts/GuiltyCharContext.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,6 +42,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <GuiltyCharProvider>
+      <RouterProvider router={router} />
+    </GuiltyCharProvider>
   </React.StrictMode>
 );

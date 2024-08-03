@@ -6,6 +6,7 @@ import CluesTab from "../components/CluesTab";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import axios from "axios";
 import lodash from "lodash";
+import { useGuiltyChar } from "../contexts/GuiltyCharContext";
 
 export default function SceneLayout() {
   const {
@@ -21,6 +22,9 @@ export default function SceneLayout() {
   } = useLoaderData();
 
   const navigate = useNavigate();
+
+  const { guiltyChar, setGuiltyChar } = useGuiltyChar();
+
   let guiltyCharId;
 
   const handleSceneChange = async (scene_id) => {
@@ -28,16 +32,16 @@ export default function SceneLayout() {
       const res = await axios.post("/api/allcharacters", {
         isGuilty: false,
       });
-      console.log(`Success: ${res.data.success}`);
+      if (res.data.success) {
+        console.log("Characters reset");
+      }
     } else if (scene_id === 2) {
       guiltyCharId = lodash.random(1, 5);
       const res = await axios.post("/api/characters", {
         characterId: guiltyCharId,
       });
       console.log(res.data);
-    } else if (scene_id != 1 && scene_id != 2) {
-      const res = await axios.get("/api/guiltychar");
-      console.log(res.data);
+      setGuiltyChar(res.data);
     }
 
     navigate(`/scene/${scene_id}`);
@@ -63,7 +67,7 @@ export default function SceneLayout() {
   return (
     <>
       <Graphic path={graphic_path} />
-      <PromptTextBox prompt={scene_prompt} guiltyChar={guiltyCharId} />
+      <PromptTextBox prompt={scene_prompt} guiltyChar={guiltyChar} />
       <LeftButton
         text={left_scene_name}
         optionId={left_scene_id}

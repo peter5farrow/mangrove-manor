@@ -70,7 +70,6 @@ app.post("/api/allcharacters", async (req, res) => {
     char.save();
   });
   res.send({ success: true });
-  console.log(allCharacters);
 });
 
 //set character to guilty/not guilty
