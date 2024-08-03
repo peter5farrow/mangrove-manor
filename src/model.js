@@ -98,7 +98,6 @@ Character.init(
   {
     character_id: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
       primaryKey: true,
     },
     first_name: {

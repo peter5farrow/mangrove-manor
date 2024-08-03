@@ -25,8 +25,6 @@ export default function SceneLayout() {
 
   const { guiltyChar, setGuiltyChar } = useGuiltyChar();
 
-  let guiltyCharId;
-
   const handleSceneChange = async (scene_id) => {
     if (scene_id === 1) {
       const res = await axios.post("/api/allcharacters", {
@@ -34,31 +32,17 @@ export default function SceneLayout() {
       });
       if (res.data.success) {
         console.log("Characters reset");
+        setGuiltyChar(null);
       }
     } else if (scene_id === 2) {
-      guiltyCharId = lodash.random(1, 5);
       const res = await axios.post("/api/characters", {
-        characterId: guiltyCharId,
+        characterId: lodash.random(1, 5),
       });
       console.log(res.data);
       setGuiltyChar(res.data);
     }
-
     navigate(`/scene/${scene_id}`);
   };
-
-  // const getFoodClue = async () => {
-  //   if (guiltyChar) {
-  //     const res = await axios.get(`/api/food/${guiltyChar.character_id}`);
-  //     return res.data.food_clue;
-  //   }
-  // };
-  // const getJobClue = async () => {
-  //   if (guiltyChar) {
-  //     const res = await axios.get(`/api/jobs/${guiltyChar.character_id}`);
-  //     return res.data.job_clue;
-  //   }
-  // };
 
   const handleLastScene = async () => {
     navigate("/guess");
@@ -67,7 +51,11 @@ export default function SceneLayout() {
   return (
     <>
       <Graphic path={graphic_path} />
-      <PromptTextBox prompt={scene_prompt} guiltyChar={guiltyChar} />
+      <PromptTextBox
+        sceneId={scene_id}
+        prompt={scene_prompt}
+        guiltyChar={guiltyChar}
+      />
       <LeftButton
         text={left_scene_name}
         optionId={left_scene_id}

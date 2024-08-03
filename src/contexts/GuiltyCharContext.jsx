@@ -1,9 +1,11 @@
+import axios from "axios";
 import { useContext, useState, createContext, useEffect } from "react";
 
 const GuiltyCharCoxtext = createContext();
 
 export const GuiltyCharProvider = ({ children }) => {
   const [guiltyChar, setGuiltyChar] = useState();
+
   return (
     <GuiltyCharCoxtext.Provider value={{ guiltyChar, setGuiltyChar }}>
       {children}

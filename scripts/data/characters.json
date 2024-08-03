@@ -1,5 +1,6 @@
 [
   {
+    "character_id": 1,
     "first_name": "Lauren",
     "last_name": "Koh",
     "age": 55,
@@ -8,6 +9,7 @@
     "occupation": "electrical engineer"
   },
   {
+    "character_id": 2,
     "first_name": "Carolyn",
     "last_name": "Harrington",
     "age": 40,
@@ -16,6 +18,7 @@
     "occupation": "author"
   },
   {
+    "character_id": 3,
     "first_name": "Ichiro",
     "last_name": "Ishima",
     "age": 29,
@@ -24,6 +27,7 @@
     "occupation": "elementary school teacher"
   },
   {
+    "character_id": 4,
     "first_name": "Mateo",
     "last_name": "Yaro",
     "age": 30,
@@ -32,6 +36,7 @@
     "occupation": "nurse"
   },
   {
+    "character_id": 5,
     "first_name": "Bobbi",
     "last_name": "Thomas",
     "age": 24,

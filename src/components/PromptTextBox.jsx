@@ -1,11 +1,9 @@
-import axios from "axios";
-
-export default function PromptTextBox({ prompt, guiltyChar }) {
-  if (guiltyChar) {
+export default function PromptTextBox({ prompt, guiltyChar, sceneId }) {
+  if (guiltyChar && sceneId != 778) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div>{guiltyChar.character_id}</div>
+        <div>{`You find some ${guiltyChar.fav_food} on the ground as well...`}</div>
       </>
     );
   } else {

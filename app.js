@@ -88,13 +88,32 @@ app.post("/api/characters", async (req, res) => {
   res.json(guiltyChar);
 });
 
-//get guilty character
+//get guilty character with clues
 app.get("/api/guiltychar", async (req, res) => {
   const guiltyChar = await Character.findOne({
+    attributes: [
+      "first_name",
+      "last_name",
+      "age",
+      "hair_color",
+      "fav_food",
+      "occupation",
+    ],
+    include: [
+      {
+        model: Food,
+        attributes: ["food_clue"],
+      },
+      {
+        model: Job,
+        attributes: ["job_clue"],
+      },
+    ],
     where: {
       is_guilty: true,
     },
   });
+
   res.json(guiltyChar);
 });
 
