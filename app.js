@@ -60,32 +60,44 @@ app.get("/api/characters/:character_id", async (req, res) => {
   res.json(character);
 });
 
-//reset all characters to not guilty, then set random character to guilty
-// app.post("/api/characters", async (req, res) => {
-//   const { is_guilty } = req.body;
+//set all characters to not guilty
+app.post("/api/allcharacters", async (req, res) => {
+  const { isGuilty } = req.body;
+  const allCharacters = await Character.findAll();
 
-//   const allCharacters = await Character.findAll();
+  allCharacters.forEach((char) => {
+    char.is_guilty = isGuilty;
+    char.save();
+  });
+  res.send({ success: true });
+  console.log(allCharacters);
+});
 
-//   for (const character of allCharacters) {
-//     if (character.is_guilty === true) {
-//       character.set({
-//         is_guilty: false,
-//       });
-//       await character.save();
-//     }
-//   }
+//set character to guilty/not guilty
+app.post("/api/characters", async (req, res) => {
+  const { characterId } = req.body;
+  const guiltyChar = await Character.findByPk(characterId);
 
-//   const guiltyChar = await Character.findByPk(
-//     lodash.random(1, 5 /* number of characters */)
-//   );
-//   guiltyChar.set({
-//     is_guilty: is_guilty,
-//   });
-//   await guiltyChar.save();
+  if (guiltyChar.is_guilty === false) {
+    guiltyChar.is_guilty = true;
+    await guiltyChar.save();
+  } else if (guiltyChar.is_guilty === true) {
+    guiltyChar.is_guilty = false;
+    await guiltyChar.save();
+  }
 
-//   res.json(guiltyChar);
-//   console.log(guiltyChar);
-// });
+  res.json(guiltyChar);
+});
+
+//get guilty character
+app.get("/api/guiltychar", async (req, res) => {
+  const guiltyChar = await Character.findOne({
+    where: {
+      is_guilty: true,
+    },
+  });
+  res.json(guiltyChar);
+});
 
 //get food by character id
 app.get("/api/food/:character_id", async (req, res) => {

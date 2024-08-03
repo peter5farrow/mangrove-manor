@@ -5,7 +5,6 @@ import RightButton from "../components/RightButton";
 import CluesTab from "../components/CluesTab";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
 import lodash from "lodash";
 
 export default function SceneLayout() {
@@ -22,14 +21,26 @@ export default function SceneLayout() {
   } = useLoaderData();
 
   const navigate = useNavigate();
-  const [guiltyCharId, setGuiltyCharId] = useState(lodash.random(1, 5));
+  let guiltyCharId;
 
   const handleSceneChange = async (scene_id) => {
-    if (scene_id === 778) {
-      setGuiltyCharId(lodash.random(1, 5));
+    if (scene_id === 1) {
+      const res = await axios.post("/api/allcharacters", {
+        isGuilty: false,
+      });
+      console.log(`Success: ${res.data.success}`);
+    } else if (scene_id === 2) {
+      guiltyCharId = lodash.random(1, 5);
+      const res = await axios.post("/api/characters", {
+        characterId: guiltyCharId,
+      });
+      console.log(res.data);
+    } else if (scene_id != 1 && scene_id != 2) {
+      const res = await axios.get("/api/guiltychar");
+      console.log(res.data);
     }
+
     navigate(`/scene/${scene_id}`);
-    console.log(guiltyCharId);
   };
 
   // const getFoodClue = async () => {
