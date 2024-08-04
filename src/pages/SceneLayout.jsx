@@ -22,8 +22,7 @@ export default function SceneLayout() {
   } = useLoaderData();
 
   const navigate = useNavigate();
-
-  const { guiltyChar, setGuiltyChar } = useGuiltyChar();
+  const { guiltyChar, setGuiltyChar, userName } = useGuiltyChar();
 
   const handleSceneChange = async (scene_id) => {
     if (scene_id === 1) {
@@ -55,6 +54,7 @@ export default function SceneLayout() {
         sceneId={scene_id}
         prompt={scene_prompt}
         guiltyChar={guiltyChar}
+        userName={userName}
       />
       <LeftButton
         text={left_scene_name}

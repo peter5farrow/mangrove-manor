@@ -2,7 +2,7 @@
   {
     "scene_id": 1,
     "scene_name": "Intro",
-    "scene_prompt": "Welcome, PLAYER, to Mangrove Manor. Here are some rules to help you on your journey: Search for clues...yadayada.",
+    "scene_prompt": "Explore the manor and ask people questions to gather clues. Clues will be saved in the CLUES tab for later reference. Once you have enough evidence, you must guess who committed the crime!",
     "left_scene_name": "Continue",
     "left_scene_id": 2,
     "right_scene_name": null,
@@ -12,7 +12,7 @@
   {
     "scene_id": 2,
     "scene_name": "Setup",
-    "scene_prompt": "There's been a mmmmmmmmmurrrrderrrrrrr! Time to gather clues. Let's start in the kitchen...",
+    "scene_prompt": "Alright, it's time to begin. Let's start in the kitchen...",
     "left_scene_name": "Kitchen",
     "left_scene_id": 3,
     "right_scene_name": null,
@@ -51,8 +51,18 @@
   },
   {
     "scene_id": 778,
-    "scene_name": "sample end",
-    "scene_prompt": "sample end",
+    "scene_name": "Success",
+    "scene_prompt": "Congratulations! You did it!",
+    "left_scene_name": "Play Again",
+    "left_scene_id": 1,
+    "right_scene_name": null,
+    "right_scene_id": 1,
+    "graphic_path": "https://img.icons8.com/?size=100&id=8635&format=png&color=89898A"
+  },
+  {
+    "scene_id": 779,
+    "scene_name": "Failure",
+    "scene_prompt": "Wrong answer, better luck next time.",
     "left_scene_name": "Play Again",
     "left_scene_id": 1,
     "right_scene_name": null,

@@ -11,7 +11,6 @@ import App from "./App.jsx";
 import "./index.css";
 import HomePage from "./pages/HomePage.jsx";
 import SceneLayout from "./pages/SceneLayout.jsx";
-import SceneData from "../scripts/data/scenes.json";
 import GuessPage from "./pages/GuessPage.jsx";
 import { GuiltyCharProvider } from "./contexts/GuiltyCharContext.jsx";
 
@@ -24,7 +23,6 @@ const router = createBrowserRouter(
         element={<SceneLayout />}
         loader={async ({ params }) => {
           const res = await axios.get(`/api/scenes/${params.sceneId}`);
-          // console.log(res.data);
           return { scene: res.data };
         }}
       />

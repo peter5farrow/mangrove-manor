@@ -3,6 +3,7 @@ import session from "express-session";
 import morgan from "morgan";
 import ViteExpress from "vite-express";
 import { Character, Food, Job, Scene } from "./src/model.js";
+import { QueryTypes } from "sequelize";
 
 const app = express();
 const port = "8000";
@@ -28,17 +29,11 @@ app.post("/api/player_name", async (req, res) => {
   const { name } = req.body;
   if (name) {
     req.session.name = name;
-    res.send({ success: true });
+    res.send({ name: req.session.name });
   } else {
     res.send({ success: false });
   }
 });
-
-//get player name
-// app.get("/api/player_name", async (req, res) => {
-//   const playerName = req.session.name;
-//   res.send({ name: playerName });
-// });
 
 //get scene by id
 app.get("/api/scenes/:scene_id", async (req, res) => {
@@ -72,50 +67,33 @@ app.post("/api/allcharacters", async (req, res) => {
   res.send({ success: true });
 });
 
-//set character to guilty/not guilty
+//set character to guilty
 app.post("/api/characters", async (req, res) => {
   const { characterId } = req.body;
-  const guiltyChar = await Character.findByPk(characterId);
-
+  const guiltyChar = await Character.findOne({
+    where: {
+      character_id: characterId,
+    },
+  });
   if (guiltyChar.is_guilty === false) {
     guiltyChar.is_guilty = true;
     await guiltyChar.save();
-  } else if (guiltyChar.is_guilty === true) {
-    guiltyChar.is_guilty = false;
-    await guiltyChar.save();
-  }
 
-  res.json(guiltyChar);
+    res.json(guiltyChar);
+  }
 });
 
 //get guilty character with clues
-app.get("/api/guiltychar", async (req, res) => {
-  const guiltyChar = await Character.findOne({
-    attributes: [
-      "first_name",
-      "last_name",
-      "age",
-      "hair_color",
-      "fav_food",
-      "occupation",
-    ],
-    include: [
-      {
-        model: Food,
-        attributes: ["food_clue"],
-      },
-      {
-        model: Job,
-        attributes: ["job_clue"],
-      },
-    ],
-    where: {
-      is_guilty: true,
-    },
-  });
+// app.get("/api/guiltychar", async (req, res) => {
+//   const guiltyChar = await sequelize.query(
+//     "SELECT first_name, last_name, age, hair_color, fav_food, f.food_clue, occupation, j.job_clue FROM characters AS c JOIN food AS f ON c.fav_food = f.food_name JOIN jobs AS j ON c.occupation = j.job_title WHERE is_guilty = true",
+//     {
+//       type: QueryTypes.SELECT,
+//     }
+//   );
 
-  res.json(guiltyChar);
-});
+//   res.json(guiltyChar);
+// });
 
 //get food by character id
 app.get("/api/food/:character_id", async (req, res) => {

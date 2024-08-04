@@ -7,9 +7,12 @@ export default function GuessPage() {
   const { characters } = useLoaderData();
   const navigate = useNavigate();
 
-  const handleGuess = async () => {
-    //add guilty functionality
-    navigate("/scene/778"); //leads to scene id of end page
+  const handleGuess = (isGuilty) => {
+    if (isGuilty === true) {
+      navigate("/scene/778");
+    } else if (isGuilty === false) {
+      navigate("/scene/779");
+    }
   };
 
   const characterButtons = characters.map(
@@ -17,7 +20,11 @@ export default function GuessPage() {
       const characterName = `${first_name} ${last_name}`;
       return (
         <div key={character_id}>
-          <CharacterButton onClick={handleGuess} character={characterName} />
+          <CharacterButton
+            onClick={handleGuess}
+            character={characterName}
+            isGuilty={is_guilty}
+          />
         </div>
       );
     }

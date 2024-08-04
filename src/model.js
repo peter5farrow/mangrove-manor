@@ -148,10 +148,8 @@ Character.init(
 Character.belongsTo(Food, {
   foreignKey: "fav_food",
   targetKey: "food_name",
-  as: "favorite_food",
 });
 Character.belongsTo(Job, {
   foreignKey: "occupation",
   targetKey: "job_title",
-  as: "job",
 });
