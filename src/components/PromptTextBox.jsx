@@ -1,9 +1,9 @@
-export default function PromptTextBox({
-  prompt,
-  guiltyChar,
-  sceneId,
-  userName,
-}) {
+import { useGuiltyChar } from "../contexts/GuiltyCharContext";
+
+export default function PromptTextBox({ prompt, sceneId }) {
+  const { guiltyChar, setGuiltyChar, userName, clues, setClues } =
+    useGuiltyChar();
+
   if (sceneId === 1) {
     return (
       <>
@@ -15,7 +15,7 @@ export default function PromptTextBox({
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div>{`There are also some ${guiltyChar.fav_food} on the floor...`}</div>
+        <div>{`There's also ${guiltyChar.food.food_clue} on the floor... Where to next?`}</div>
       </>
     );
   } else {

@@ -22,7 +22,7 @@
   {
     "scene_id": 3,
     "scene_name": "Kitchen",
-    "scene_prompt": "You find a golden blonde hair on the kitchen table. Where to next?",
+    "scene_prompt": "You find a golden blonde hair on the kitchen table.",
     "left_scene_name": "Study",
     "left_scene_id": 4,
     "right_scene_name": "Laundry room",

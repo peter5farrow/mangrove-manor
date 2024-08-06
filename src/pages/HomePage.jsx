@@ -7,15 +7,31 @@ import { useGuiltyChar } from "../contexts/GuiltyCharContext";
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const { userName, setUserName } = useGuiltyChar();
+  const { guiltyChar, setGuiltyChar, userName, setUserName, clues, setClues } =
+    useGuiltyChar();
+
+  const capitalize = (str) => {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+  };
 
   const handleName = async (e, name) => {
     e.preventDefault();
     const res = await axios.post("/api/player_name", name);
+
     if (res.data.name) {
+      const playerName = capitalize(res.data.name);
+      console.log(`Name: ${playerName}`);
+      setUserName(playerName);
       navigate("/scene/1");
-      console.log(`Name: ${res.data.name}`);
-      setUserName(res.data.name);
+
+      const res2 = await axios.post("/api/allcharacters", {
+        isGuilty: false,
+      });
+      if (res2.data.success) {
+        console.log("Characters reset");
+        setGuiltyChar(null);
+        setClues(["Clues will appear here"]);
+      }
     }
   };
 

@@ -1,29 +1,31 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { useGuiltyChar } from "../contexts/GuiltyCharContext";
 
-export default function CluesTab({ name, ...props }) {
+export default function CluesTab() {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const { clues, setClues } = useGuiltyChar();
+
+  const cluesList = clues.map((clue) => {
+    return <li key={clue}>{clue}</li>;
+  });
 
   return (
     <>
       <Button variant="primary" onClick={handleShow} className="me-2">
-        {name}CLUES
+        CLUES
       </Button>
-      <Offcanvas show={show} placement="bottom" onHide={handleClose} {...props}>
+      <Offcanvas show={show} placement="bottom" onHide={handleClose}>
         <Offcanvas.Header>
-          <Offcanvas.Title>Clues</Offcanvas.Title>
+          <Offcanvas.Title>CLUES</Offcanvas.Title>
           <Button onClick={handleClose}>x</Button>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ul>
-            <li>clue</li>
-            <li>another clue</li>
-            <li>and another one</li>
-          </ul>
+          <ul>{cluesList}</ul>
         </Offcanvas.Body>
       </Offcanvas>
     </>

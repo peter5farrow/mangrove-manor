@@ -22,7 +22,8 @@ export default function SceneLayout() {
   } = useLoaderData();
 
   const navigate = useNavigate();
-  const { guiltyChar, setGuiltyChar, userName } = useGuiltyChar();
+  const { guiltyChar, setGuiltyChar, userName, clues, setClues } =
+    useGuiltyChar();
 
   const handleSceneChange = async (scene_id) => {
     if (scene_id === 1) {
@@ -32,14 +33,21 @@ export default function SceneLayout() {
       if (res.data.success) {
         console.log("Characters reset");
         setGuiltyChar(null);
+        setClues(["Clues will appear here"]);
       }
     } else if (scene_id === 2) {
       const res = await axios.post("/api/characters", {
         characterId: lodash.random(1, 5),
       });
-      console.log(res.data);
-      setGuiltyChar(res.data);
+      if (res.data) {
+        const res2 = await axios.get("/api/guiltychar");
+        console.log(res2.data);
+        setGuiltyChar(res2.data);
+      }
+    } else {
+      setClues([guiltyChar.food.food_clue]);
     }
+
     navigate(`/scene/${scene_id}`);
   };
 
@@ -50,12 +58,7 @@ export default function SceneLayout() {
   return (
     <>
       <Graphic path={graphic_path} />
-      <PromptTextBox
-        sceneId={scene_id}
-        prompt={scene_prompt}
-        guiltyChar={guiltyChar}
-        userName={userName}
-      />
+      <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
       <LeftButton
         text={left_scene_name}
         optionId={left_scene_id}

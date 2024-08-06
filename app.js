@@ -84,15 +84,51 @@ app.post("/api/characters", async (req, res) => {
 });
 
 //get guilty character with clues
-// app.get("/api/guiltychar", async (req, res) => {
-//   const guiltyChar = await sequelize.query(
-//     "SELECT first_name, last_name, age, hair_color, fav_food, f.food_clue, occupation, j.job_clue FROM characters AS c JOIN food AS f ON c.fav_food = f.food_name JOIN jobs AS j ON c.occupation = j.job_title WHERE is_guilty = true",
-//     {
-//       type: QueryTypes.SELECT,
-//     }
-//   );
+app.get("/api/guiltychar", async (req, res) => {
+  const guiltyChar = await Character.findOne({
+    attributes: [
+      "first_name",
+      "last_name",
+      "age",
+      "hair_color",
+      "fav_food",
+      "occupation",
+    ],
+    include: [
+      {
+        model: Food,
+        attributes: ["food_clue"],
+      },
+      {
+        model: Job,
+        attributes: ["job_clue"],
+      },
+    ],
+    where: {
+      is_guilty: true,
+    },
+  });
 
-//   res.json(guiltyChar);
+  req.session.guiltyChar = guiltyChar;
+  res.json(req.session.guiltyChar);
+});
+
+//get all clues for all characters
+// app.get("/api/allclues", async (req, res) => {
+//   const clues = await Character.findAll({
+//     attributes: ["fav_food"],
+//     include: [
+//       {
+//         model: Food,
+//         attributes: ["food_clue"],
+//       },
+//       {
+//         model: Job,
+//         attributes: ["job_clue"],
+//       },
+//     ],
+//   });
+//   res.json(clues);
 // });
 
 //get food by character id
