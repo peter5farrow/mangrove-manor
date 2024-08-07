@@ -1,8 +1,7 @@
 import { useGuiltyChar } from "../contexts/GuiltyCharContext";
 
 export default function PromptTextBox({ prompt, sceneId }) {
-  const { guiltyChar, setGuiltyChar, userName, clues, setClues } =
-    useGuiltyChar();
+  const { guiltyChar, userName } = useGuiltyChar();
 
   if (sceneId === 1) {
     return (
@@ -11,7 +10,13 @@ export default function PromptTextBox({ prompt, sceneId }) {
         <div id="prompt-text-box">{prompt}</div>
       </>
     );
-  } else if (guiltyChar && sceneId != 2 && sceneId != 778 && sceneId != 779) {
+  } else if (
+    guiltyChar &&
+    sceneId &&
+    sceneId != 2 &&
+    sceneId != 778 &&
+    sceneId != 779
+  ) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>

@@ -25,6 +25,12 @@ export default function SceneLayout() {
   const { guiltyChar, setGuiltyChar, userName, clues, setClues } =
     useGuiltyChar();
 
+  const getRandomClue = async () => {
+    const res = await axios.get(`/api/food/${lodash.random(1, 5)}`);
+    console.log(res.data);
+    return res.data;
+  };
+
   const handleSceneChange = async (scene_id) => {
     if (scene_id === 1) {
       const res = await axios.post("/api/allcharacters", {
@@ -44,6 +50,8 @@ export default function SceneLayout() {
         console.log(res2.data);
         setGuiltyChar(res2.data);
       }
+    } else if (!guiltyChar) {
+      navigate("/scene/1");
     } else {
       setClues([guiltyChar.food.food_clue]);
     }
@@ -55,22 +63,42 @@ export default function SceneLayout() {
     navigate("/guess");
   };
 
-  return (
-    <>
-      <Graphic path={graphic_path} />
-      <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
-      <LeftButton
-        text={left_scene_name}
-        optionId={left_scene_id}
-        onClick={handleSceneChange}
-        onLastScene={handleLastScene}
-      />
-      <RightButton
-        text={right_scene_name}
-        optionId={right_scene_id}
-        onClick={handleSceneChange}
-      />
-      <CluesTab />
-    </>
-  );
+  if (scene_id != 778 && scene_id != 779) {
+    return (
+      <>
+        <Graphic path={graphic_path} />
+        <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
+        <LeftButton
+          text={left_scene_name}
+          optionId={left_scene_id}
+          onClick={handleSceneChange}
+          onLastScene={handleLastScene}
+        />
+        <RightButton
+          text={right_scene_name}
+          optionId={right_scene_id}
+          onClick={handleSceneChange}
+        />
+        <CluesTab />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Graphic path={graphic_path} />
+        <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
+        <LeftButton
+          text={left_scene_name}
+          optionId={left_scene_id}
+          onClick={handleSceneChange}
+          onLastScene={handleLastScene}
+        />
+        <RightButton
+          text={right_scene_name}
+          optionId={right_scene_id}
+          onClick={handleSceneChange}
+        />
+      </>
+    );
+  }
 }

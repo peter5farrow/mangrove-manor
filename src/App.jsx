@@ -1,4 +1,4 @@
-import { useNavigate, NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import TitleBar from "./components/TitleBar";
 import "./App.css";
 

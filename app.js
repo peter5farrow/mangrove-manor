@@ -3,7 +3,6 @@ import session from "express-session";
 import morgan from "morgan";
 import ViteExpress from "vite-express";
 import { Character, Food, Job, Scene } from "./src/model.js";
-import { QueryTypes } from "sequelize";
 
 const app = express();
 const port = "8000";
@@ -18,7 +17,7 @@ app.use(
 
 //ROUTES
 
-//get all scenes DEMO
+//get all scenes TEST
 app.get("/api/scenes", async (req, res) => {
   const allScenes = await Scene.findAll();
   res.json(allScenes);
@@ -67,7 +66,7 @@ app.post("/api/allcharacters", async (req, res) => {
   res.send({ success: true });
 });
 
-//set character to guilty
+//set one character to guilty
 app.post("/api/characters", async (req, res) => {
   const { characterId } = req.body;
   const guiltyChar = await Character.findOne({
@@ -89,6 +88,7 @@ app.get("/api/guiltychar", async (req, res) => {
     attributes: [
       "first_name",
       "last_name",
+      "is_guilty",
       "age",
       "hair_color",
       "fav_food",
@@ -114,45 +114,41 @@ app.get("/api/guiltychar", async (req, res) => {
 });
 
 //get all clues for all characters
-// app.get("/api/allclues", async (req, res) => {
-//   const clues = await Character.findAll({
-//     attributes: ["fav_food"],
-//     include: [
-//       {
-//         model: Food,
-//         attributes: ["food_clue"],
-//       },
-//       {
-//         model: Job,
-//         attributes: ["job_clue"],
-//       },
-//     ],
-//   });
-//   res.json(clues);
-// });
-
-//get food by character id
-app.get("/api/food/:character_id", async (req, res) => {
-  const { character_id } = req.params;
-  const character = await Character.findByPk(character_id);
-  const food = await Food.findOne({
-    where: {
-      food_name: character.fav_food,
-    },
+app.get("/api/allclues", async (req, res) => {
+  const clues = await Character.findAll({
+    attributes: ["fav_food"],
+    include: [
+      {
+        model: Food,
+        attributes: ["food_clue"],
+      },
+      {
+        model: Job,
+        attributes: ["job_clue"],
+      },
+    ],
   });
-  res.json(food);
+  res.json(clues);
 });
 
-//get job by character id
+//get food clue by character id
+app.get("/api/food/:character_id", async (req, res) => {
+  const { character_id } = req.params;
+  const character = await Character.findOne({
+    where: { character_id: character_id },
+    include: [Food],
+  });
+  res.json(character.food.food_clue);
+});
+
+//get job clue by character id
 app.get("/api/jobs/:character_id", async (req, res) => {
   const { character_id } = req.params;
-  const character = await Character.findByPk(character_id);
-  const job = await Job.findOne({
-    where: {
-      job_title: character.occupation,
-    },
+  const character = await Character.findOne({
+    where: { character_id: character_id },
+    include: [Job],
   });
-  res.json(job);
+  res.json(character.job.job_clue);
 });
 
 ViteExpress.listen(app, port, () =>

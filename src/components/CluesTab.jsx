@@ -5,8 +5,14 @@ import { useGuiltyChar } from "../contexts/GuiltyCharContext";
 
 export default function CluesTab() {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  const handleShow = () => {
+    if (!show) {
+      setShow(true);
+    } else if (show) {
+      setShow(false);
+    }
+  };
 
   const { clues, setClues } = useGuiltyChar();
 
@@ -19,10 +25,9 @@ export default function CluesTab() {
       <Button variant="primary" onClick={handleShow} className="me-2">
         CLUES
       </Button>
-      <Offcanvas show={show} placement="bottom" onHide={handleClose}>
+      <Offcanvas show={show} placement="bottom" onHide={handleShow}>
         <Offcanvas.Header>
           <Offcanvas.Title>CLUES</Offcanvas.Title>
-          <Button onClick={handleClose}>x</Button>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul>{cluesList}</ul>
