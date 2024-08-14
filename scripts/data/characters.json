@@ -3,7 +3,7 @@
     "character_id": 1,
     "first_name": "Lauren",
     "last_name": "Koh",
-    "age": 55,
+    "age": 58,
     "hair_color": "black/white",
     "fav_food": "pretzels",
     "occupation": "electrical engineer"
@@ -32,14 +32,14 @@
     "last_name": "Yaro",
     "age": 30,
     "hair_color": "blonde",
-    "fav_food": "couscous",
+    "fav_food": "curry rice",
     "occupation": "nurse"
   },
   {
     "character_id": 5,
     "first_name": "Bobbi",
     "last_name": "Thomas",
-    "age": 24,
+    "age": 22,
     "hair_color": "red",
     "fav_food": "chicken nuggets",
     "occupation": "hair stylist"
