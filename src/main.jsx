@@ -23,7 +23,8 @@ const router = createBrowserRouter(
         element={<SceneLayout />}
         loader={async ({ params }) => {
           const res = await axios.get(`/api/scenes/${params.sceneId}`);
-          return { scene: res.data };
+          const res2 = await axios.get("/api/characters");
+          return { scene: res.data, characters: res2.data };
         }}
       />
       <Route

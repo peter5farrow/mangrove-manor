@@ -19,6 +19,7 @@ export default function SceneLayout() {
       right_scene_id,
       graphic_path,
     },
+    characters,
   } = useLoaderData();
 
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ export default function SceneLayout() {
           optionId={right_scene_id}
           onClick={handleSceneChange}
         />
-        <CluesTab />
+        <CluesTab characters={characters} />
       </>
     );
   } else {
