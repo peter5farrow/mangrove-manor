@@ -7,8 +7,7 @@ import { useGuiltyChar } from "../contexts/GuiltyCharContext";
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const { guiltyChar, setGuiltyChar, userName, setUserName, clues, setClues } =
-    useGuiltyChar();
+  const { guiltyChar, setGuiltyChar, userName, setUserName } = useGuiltyChar();
 
   const capitalize = (str) => {
     return str[0].toUpperCase() + str.slice(1).toLowerCase();
@@ -30,7 +29,6 @@ export default function HomePage() {
       if (res2.data.success) {
         console.log("Characters reset");
         setGuiltyChar(null);
-        setClues(["Clues will appear here"]);
       }
     }
   };

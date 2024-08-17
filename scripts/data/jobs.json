@@ -1,15 +1,15 @@
 [
   {
     "job_title": "electrical engineer",
-    "job_clue": "a little piece of metal"
+    "job_clue": "a little piece of wire"
   },
   {
     "job_title": "author",
-    "job_clue": "an ink stain"
+    "job_clue": "a fountain pen"
   },
   {
     "job_title": "hair stylist",
-    "job_clue": "some clear, gel-like substance"
+    "job_clue": "some shears"
   },
   {
     "job_title": "nurse",
@@ -17,6 +17,6 @@
   },
   {
     "job_title": "elementary school teacher",
-    "job_clue": "a bit of wax"
+    "job_clue": "a crayon"
   }
 ]

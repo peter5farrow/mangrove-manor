@@ -4,9 +4,10 @@
     "first_name": "Lauren",
     "last_name": "Koh",
     "age": 58,
-    "hair_color": "black/white",
+    "hair_color": "gray",
     "fav_food": "pretzels",
-    "occupation": "electrical engineer"
+    "occupation": "electrical engineer",
+    "char_motive": "love"
   },
   {
     "character_id": 2,
@@ -15,7 +16,8 @@
     "age": 40,
     "hair_color": "brown",
     "fav_food": "chocolate-covered almonds",
-    "occupation": "author"
+    "occupation": "author",
+    "char_motive": "jealousy"
   },
   {
     "character_id": 3,
@@ -24,7 +26,8 @@
     "age": 29,
     "hair_color": "black",
     "fav_food": "cherries",
-    "occupation": "elementary school teacher"
+    "occupation": "elementary school teacher",
+    "char_motive": "greed"
   },
   {
     "character_id": 4,
@@ -33,7 +36,8 @@
     "age": 30,
     "hair_color": "blonde",
     "fav_food": "curry rice",
-    "occupation": "nurse"
+    "occupation": "nurse",
+    "char_motive": "revenge"
   },
   {
     "character_id": 5,
@@ -42,6 +46,7 @@
     "age": 22,
     "hair_color": "red",
     "fav_food": "chicken nuggets",
-    "occupation": "hair stylist"
+    "occupation": "hair stylist",
+    "char_motive": "accident"
   }
 ]

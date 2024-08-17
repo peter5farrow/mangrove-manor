@@ -89,6 +89,28 @@ Job.init(
   }
 );
 
+export class Motive extends Model {
+  [util.inspect.custom]() {
+    return this.toJSON();
+  }
+}
+Motive.init(
+  {
+    motive_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      primaryKey: true,
+    },
+    motive_clue: {
+      type: DataTypes.TEXT,
+    },
+  },
+  {
+    modelName: "motive",
+    sequelize: db,
+  }
+);
+
 export class Character extends Model {
   [util.inspect.custom]() {
     return this.toJSON();
@@ -132,18 +154,19 @@ Character.init(
         key: "job_title",
       },
     },
+    char_motive: {
+      type: DataTypes.STRING,
+      references: {
+        model: "motives",
+        key: "motive_name",
+      },
+    },
   },
   {
     modelName: "character",
     sequelize: db,
   }
 );
-
-// Food.hasMany(Character, { foreignKey: "fav_food" });
-// Character.belongsTo(Food, { foreignKey: "fav_food" });
-
-// Job.hasMany(Character, { foreignKey: "job_title" });
-// Character.belongsTo(Job, { foreignKey: "job_title" });
 
 Character.belongsTo(Food, {
   foreignKey: "fav_food",
@@ -152,4 +175,8 @@ Character.belongsTo(Food, {
 Character.belongsTo(Job, {
   foreignKey: "occupation",
   targetKey: "job_title",
+});
+Character.belongsTo(Motive, {
+  foreignKey: "char_motive",
+  targetKey: "motive_name",
 });

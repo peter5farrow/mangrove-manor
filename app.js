@@ -2,7 +2,7 @@ import express from "express";
 import session from "express-session";
 import morgan from "morgan";
 import ViteExpress from "vite-express";
-import { Character, Food, Job, Scene } from "./src/model.js";
+import { Character, Food, Job, Motive, Scene } from "./src/model.js";
 
 const app = express();
 const port = "8000";
@@ -93,6 +93,7 @@ app.get("/api/guiltychar", async (req, res) => {
       "hair_color",
       "fav_food",
       "occupation",
+      "char_motive",
     ],
     include: [
       {
@@ -102,6 +103,10 @@ app.get("/api/guiltychar", async (req, res) => {
       {
         model: Job,
         attributes: ["job_clue"],
+      },
+      {
+        model: Motive,
+        attributes: ["motive_clue"],
       },
     ],
     where: {

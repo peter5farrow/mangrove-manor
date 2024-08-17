@@ -5,7 +5,6 @@ const GuiltyCharCoxtext = createContext();
 export const GuiltyCharProvider = ({ children }) => {
   const [userName, setUserName] = useState("My friend");
   const [guiltyChar, setGuiltyChar] = useState();
-  const [clues, setClues] = useState(["Clues will appear here"]);
 
   return (
     <GuiltyCharCoxtext.Provider
@@ -14,8 +13,6 @@ export const GuiltyCharProvider = ({ children }) => {
         setGuiltyChar,
         userName,
         setUserName,
-        clues,
-        setClues,
       }}
     >
       {children}

@@ -23,14 +23,13 @@ export default function SceneLayout() {
   } = useLoaderData();
 
   const navigate = useNavigate();
-  const { guiltyChar, setGuiltyChar, userName, clues, setClues } =
-    useGuiltyChar();
+  const { guiltyChar, setGuiltyChar, userName } = useGuiltyChar();
 
-  const getRandomClue = async () => {
-    const res = await axios.get(`/api/food/${lodash.random(1, 5)}`);
-    console.log(res.data);
-    return res.data;
-  };
+  // const getRandomClue = async () => {
+  //   const res = await axios.get(`/api/food/${lodash.random(1, 5)}`);
+  //   console.log(res.data);
+  //   return res.data;
+  // };
 
   const handleSceneChange = async (scene_id) => {
     if (scene_id === 1) {
@@ -40,7 +39,6 @@ export default function SceneLayout() {
       if (res.data.success) {
         console.log("Characters reset");
         setGuiltyChar(null);
-        setClues(["Clues will appear here"]);
       }
     } else if (scene_id === 2) {
       const res = await axios.post("/api/characters", {
@@ -53,10 +51,7 @@ export default function SceneLayout() {
       }
     } else if (!guiltyChar) {
       navigate("/scene/1");
-    } else {
-      setClues([guiltyChar.food.food_clue]);
     }
-
     navigate(`/scene/${scene_id}`);
   };
 
