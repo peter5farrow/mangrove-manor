@@ -73,12 +73,12 @@ export default function SceneLayout() {
           text={left_scene_name}
           optionId={left_scene_id}
           onClick={handleSceneChange}
-          onLastScene={handleLastScene}
         />
         <RightButton
           text={right_scene_name}
           optionId={right_scene_id}
           onClick={handleSceneChange}
+          onLastScene={handleLastScene}
         />
         <CluesTab characters={characters} />
       </>
@@ -92,12 +92,12 @@ export default function SceneLayout() {
           text={left_scene_name}
           optionId={left_scene_id}
           onClick={handleSceneChange}
-          onLastScene={handleLastScene}
         />
         <RightButton
           text={right_scene_name}
           optionId={right_scene_id}
           onClick={handleSceneChange}
+          onLastScene={handleLastScene}
         />
       </>
     );

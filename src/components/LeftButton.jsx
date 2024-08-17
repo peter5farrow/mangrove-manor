@@ -1,5 +1,5 @@
-export default function LeftButton({ text, optionId, onClick, onLastScene }) {
-  if (text && optionId != 777) {
+export default function LeftButton({ text, optionId, onClick }) {
+  if (text) {
     return (
       <>
         <button
@@ -8,14 +8,6 @@ export default function LeftButton({ text, optionId, onClick, onLastScene }) {
             return onClick(optionId);
           }}
         >
-          {text}
-        </button>
-      </>
-    );
-  } else if (optionId === 777) {
-    return (
-      <>
-        <button id="left-button" onClick={onLastScene}>
           {text}
         </button>
       </>

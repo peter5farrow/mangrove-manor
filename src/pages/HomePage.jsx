@@ -37,7 +37,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Graphic path="https://img.icons8.com/?size=100&id=2797&format=png&color=206332" />
+      <Graphic path="https://img.icons8.com/?size=100&id=2797&format=png&color=000000" />
       <PromptTextBox prompt="Welcome to Mangrove Manor. Please enter your name to continue:" />
       <NameInputBox onInput={handleName} />
     </>
