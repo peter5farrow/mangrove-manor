@@ -89,24 +89,24 @@ Job.init(
   }
 );
 
-export class Motive extends Model {
+export class Country extends Model {
   [util.inspect.custom]() {
     return this.toJSON();
   }
 }
-Motive.init(
+Country.init(
   {
-    motive_name: {
+    country_name: {
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
     },
-    motive_clue: {
+    country_clue: {
       type: DataTypes.TEXT,
     },
   },
   {
-    modelName: "motive",
+    modelName: "country",
     sequelize: db,
   }
 );
@@ -154,11 +154,11 @@ Character.init(
         key: "job_title",
       },
     },
-    char_motive: {
+    birthplace: {
       type: DataTypes.STRING,
       references: {
-        model: "motives",
-        key: "motive_name",
+        model: "countries",
+        key: "country_name",
       },
     },
   },
@@ -176,7 +176,7 @@ Character.belongsTo(Job, {
   foreignKey: "occupation",
   targetKey: "job_title",
 });
-Character.belongsTo(Motive, {
-  foreignKey: "char_motive",
-  targetKey: "motive_name",
+Character.belongsTo(Country, {
+  foreignKey: "birthplace",
+  targetKey: "country_name",
 });

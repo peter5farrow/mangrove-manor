@@ -1,9 +1,9 @@
-import { Scene, Character, Food, Job, Motive, db } from "../src/model.js";
+import { Scene, Character, Food, Job, Country, db } from "../src/model.js";
 import sceneData from "./data/scenes.json" assert { type: "json" };
 import characterData from "./data/characters.json" assert { type: "json" };
 import foodData from "./data/foods.json" assert { type: "json" };
 import jobData from "./data/jobs.json" assert { type: "json" };
-import motiveData from "./data/motives.json" assert { type: "json" };
+import countryData from "./data/countries.json" assert { type: "json" };
 
 console.log("Syncing database...");
 await db.sync({ force: true });
@@ -64,16 +64,16 @@ const jobsInDB = await Promise.all(
   })
 );
 
-const motivesInDB = await Promise.all(
-  motiveData.map((motive) => {
-    const { motive_name, motive_clue } = motive;
+const countriesInDB = await Promise.all(
+  countryData.map((country) => {
+    const { country_name, country_clue } = country;
 
-    const newMotive = Motive.create({
-      motive_name,
-      motive_clue,
+    const newCountry = Country.create({
+      country_name,
+      country_clue,
     });
 
-    return newMotive;
+    return newCountry;
   })
 );
 
@@ -88,7 +88,7 @@ const charactersInDB = await Promise.all(
       hair_color,
       fav_food,
       occupation,
-      char_motive,
+      birthplace,
     } = character;
 
     const newChar = Character.create({
@@ -100,7 +100,7 @@ const charactersInDB = await Promise.all(
       hair_color,
       fav_food,
       occupation,
-      char_motive,
+      birthplace,
     });
 
     return newChar;
@@ -108,8 +108,7 @@ const charactersInDB = await Promise.all(
 );
 console.log(foodsInDB);
 console.log(jobsInDB);
-console.log(motivesInDB);
-console.log(scenesInDB);
+console.log(countriesInDB);
 console.log(charactersInDB);
 
 await db.close();

@@ -2,7 +2,7 @@ import Graphic from "../components/Graphic";
 import PromptTextBox from "../components/PromptTextBox";
 import LeftButton from "../components/LeftButton";
 import RightButton from "../components/RightButton";
-import CluesTab from "../components/CluesTab";
+import CharactersTab from "../components/CharactersTab";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import axios from "axios";
 import lodash from "lodash";
@@ -75,7 +75,7 @@ export default function SceneLayout() {
           onClick={handleSceneChange}
           onLastScene={handleLastScene}
         />
-        <CluesTab characters={characters} />
+        <CharactersTab characters={characters} />
       </>
     );
   } else {

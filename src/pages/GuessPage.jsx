@@ -2,6 +2,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Graphic from "../components/Graphic";
 import CharacterButton from "../components/CharacterButton";
 import PromptTextBox from "../components/PromptTextBox";
+import CharactersTab from "../components/CharactersTab";
 
 export default function GuessPage() {
   const { characters } = useLoaderData();
@@ -35,6 +36,7 @@ export default function GuessPage() {
       <Graphic path="https://img.icons8.com/?size=100&id=m0X59wVKxiRO&format=png&color=000000" />
       <PromptTextBox prompt="Who do you think committed the crime?" />
       {characterButtons}
+      <CharactersTab characters={characters} />
     </>
   );
 }

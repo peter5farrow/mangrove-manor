@@ -7,7 +7,7 @@
     "hair_color": "gray",
     "fav_food": "pretzels",
     "occupation": "electrical engineer",
-    "char_motive": "love"
+    "birthplace": "Germany"
   },
   {
     "character_id": 2,
@@ -17,7 +17,7 @@
     "hair_color": "brown",
     "fav_food": "chocolate-covered almonds",
     "occupation": "author",
-    "char_motive": "jealousy"
+    "birthplace": "Ireland"
   },
   {
     "character_id": 3,
@@ -27,7 +27,7 @@
     "hair_color": "black",
     "fav_food": "cherries",
     "occupation": "elementary school teacher",
-    "char_motive": "greed"
+    "birthplace": "Japan"
   },
   {
     "character_id": 4,
@@ -37,7 +37,7 @@
     "hair_color": "blonde",
     "fav_food": "curry rice",
     "occupation": "nurse",
-    "char_motive": "revenge"
+    "birthplace": "Nigeria"
   },
   {
     "character_id": 5,
@@ -47,6 +47,6 @@
     "hair_color": "red",
     "fav_food": "chicken nuggets",
     "occupation": "hair stylist",
-    "char_motive": "accident"
+    "birthplace": "USA"
   }
 ]
