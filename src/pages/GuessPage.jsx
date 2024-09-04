@@ -33,7 +33,7 @@ export default function GuessPage() {
 
   return (
     <>
-      <Graphic path="https://img.icons8.com/?size=100&id=m0X59wVKxiRO&format=png&color=000000" />
+      <Graphic path="https://img.icons8.com/?size=100&id=m0X59wVKxiRO&format=png&color=D1CCC5" />
       <PromptTextBox prompt="Who do you think committed the crime?" />
       {characterButtons}
       <CharactersTab characters={characters} />

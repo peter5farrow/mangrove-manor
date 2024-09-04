@@ -7,6 +7,9 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import axios from "axios";
 import lodash from "lodash";
 import { useGuiltyChar } from "../contexts/GuiltyCharContext";
+import GuessButton from "../components/GuessButton";
+import { Container } from "react-bootstrap";
+import "../styles/SceneLayoutStyle.css";
 
 export default function SceneLayout() {
   const {
@@ -59,41 +62,61 @@ export default function SceneLayout() {
     navigate("/guess");
   };
 
-  if (scene_id != 778 && scene_id != 779) {
+  if (scene_id != 1 && scene_id != 2 && scene_id != 778 && scene_id != 779) {
     return (
       <>
-        <Graphic path={graphic_path} />
-        <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
-        <LeftButton
-          text={left_scene_name}
-          optionId={left_scene_id}
-          onClick={handleSceneChange}
-        />
-        <RightButton
-          text={right_scene_name}
-          optionId={right_scene_id}
-          onClick={handleSceneChange}
-          onLastScene={handleLastScene}
-        />
-        <CharactersTab characters={characters} />
+        <Container id="scene-cont">
+          <Container id="graphic-cont">
+            <Graphic path={graphic_path} />
+          </Container>
+
+          <Container id="prompt-cont">
+            <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
+          </Container>
+
+          <Container id="buttons-cont">
+            <LeftButton
+              text={left_scene_name}
+              optionId={left_scene_id}
+              onClick={handleSceneChange}
+            />
+            <RightButton
+              text={right_scene_name}
+              optionId={right_scene_id}
+              onClick={handleSceneChange}
+            />
+          </Container>
+
+          <CharactersTab characters={characters} />
+          <GuessButton onLastScene={handleLastScene} />
+        </Container>
       </>
     );
   } else {
     return (
       <>
-        <Graphic path={graphic_path} />
-        <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
-        <LeftButton
-          text={left_scene_name}
-          optionId={left_scene_id}
-          onClick={handleSceneChange}
-        />
-        <RightButton
-          text={right_scene_name}
-          optionId={right_scene_id}
-          onClick={handleSceneChange}
-          onLastScene={handleLastScene}
-        />
+        <Container id="scene-cont">
+          <Container id="graphic-cont">
+            <Graphic path={graphic_path} />
+          </Container>
+
+          <Container id="prompt-cont">
+            <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
+          </Container>
+
+          <Container id="buttons-cont">
+            <LeftButton
+              text={left_scene_name}
+              optionId={left_scene_id}
+              onClick={handleSceneChange}
+            />
+            <RightButton
+              text={right_scene_name}
+              optionId={right_scene_id}
+              onClick={handleSceneChange}
+            />
+          </Container>
+        </Container>
       </>
     );
   }

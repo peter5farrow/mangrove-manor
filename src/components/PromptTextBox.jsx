@@ -35,7 +35,7 @@ export default function PromptTextBox({ prompt, sceneId }) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`The walls are covered with dozens of old photographs, and there is a cabinet containing some china, a few glass figurines, a postcard from ${guiltyChar.birthplace}, and a vintage ash tray. Where will you go next?`}</div>
+        <div id="promt-template">{`The walls are covered with dozens of old photographs, and there is a cabinet containing some china, a few glass figurines, and a postcard from ${guiltyChar.birthplace}. Where will you go next?`}</div>
       </>
     );
   } else if (sceneId === 6) {
@@ -51,7 +51,7 @@ export default function PromptTextBox({ prompt, sceneId }) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`The spare room feels incredibly cozy. Light pierces through the window as the sun is just beginning to set, bathing the room in a yellow-orange glow. The bed has crisp white sheets (save for a single ${guiltyChar.hair_color} hair) and is topped with a stack of what must be the world’s fluffiest pillows. There is a bookshelf on the north wall filled with old textbooks, most of them covered with a thin veneer of dust. A nail file and a small bottle of hair gel sit on the bedside table. Where will you go next?
+        <div id="promt-template">{`The spare room feels incredibly cozy. Light pierces through the window as the sun is just beginning to set, bathing the room in a yellow-orange glow. The bed has crisp white sheets (save for a single ${guiltyChar.hair_color} hair) and is topped with a stack of what must be the world’s fluffiest pillows. There is a bookshelf on the north wall filled with old textbooks, most of them covered with a thin veneer of dust. A nail file sits on the bedside table. Where will you go next?
 `}</div>
       </>
     );

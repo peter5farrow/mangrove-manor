@@ -1,9 +1,11 @@
 import Graphic from "../components/Graphic";
+import { Container } from "react-bootstrap";
 import PromptTextBox from "../components/PromptTextBox";
 import NameInputBox from "../components/NameInputBox";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useGuiltyChar } from "../contexts/GuiltyCharContext";
+import "../styles/HomePageStyle.css";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -35,8 +37,10 @@ export default function HomePage() {
 
   return (
     <>
-      <Graphic path="https://img.icons8.com/?size=100&id=2797&format=png&color=000000" />
-      <PromptTextBox prompt="Welcome to Mangrove Manor. Please enter your name to continue:" />
+      <Graphic path="https://img.icons8.com/?size=100&id=2797&format=png&color=D1CCC5" />
+      <Container id="prompt-cont">
+        <PromptTextBox prompt="Welcome to Mangrove Manor. Please enter your name to continue:" />
+      </Container>
       <NameInputBox onInput={handleName} />
     </>
   );

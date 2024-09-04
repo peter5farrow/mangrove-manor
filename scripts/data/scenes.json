@@ -2,12 +2,12 @@
   {
     "scene_id": 1,
     "scene_name": "Intro",
-    "scene_prompt": "Explore the manor and begin to gather clues. Check the “Characters” tab to compare your notes with information about the other people who were in the house the night of the crime. Once you have enough evidence, you must guess who is guilty.",
+    "scene_prompt": "Explore the manor and begin to gather clues. Check the “Characters” tab to compare your notes with information about the other people who were in the house the night of the crime. Once you have enough evidence, click the “Guess” button to guess who is guilty.",
     "left_scene_name": "Continue",
     "left_scene_id": 2,
     "right_scene_name": null,
     "right_scene_id": 1,
-    "graphic_path": "https://img.icons8.com/?size=100&id=2797&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=2797&format=png&color=D1CCC5"
   },
   {
     "scene_id": 2,
@@ -17,17 +17,17 @@
     "left_scene_id": 3,
     "right_scene_name": null,
     "right_scene_id": 1,
-    "graphic_path": "https://img.icons8.com/?size=100&id=2797&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=2797&format=png&color=D1CCC5"
   },
   {
     "scene_id": 3,
     "scene_name": "Living Room",
-    "scene_prompt": "The living room is large. Soft light streams in through one grand window on the south wall. There are two emerald green armchairs set in front of an ovular table made of some beautiful dark wood. In one chair sits a woman. She’s small, with black hair that is just beginning to gray. A glass of something bubbly sits on the table in front of her.",
+    "scene_prompt": "The living room is large. Soft light streams in through one grand window on the south wall. There are two emerald green armchairs set in front of an oval table made of beautiful dark wood. In one chair sits a woman. She’s small, with black hair that is just beginning to gray. A glass of something bubbly sits on the table in front of her.",
     "left_scene_name": "Kitchen",
     "left_scene_id": 4,
     "right_scene_name": "Dining Room",
     "right_scene_id": 5,
-    "graphic_path": "https://img.icons8.com/?size=100&id=wiIkRFY9vobN&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=wiIkRFY9vobN&format=png&color=D1CCC5"
   },
   {
     "scene_id": 4,
@@ -37,7 +37,7 @@
     "left_scene_id": 6,
     "right_scene_name": "Bathroom",
     "right_scene_id": 9,
-    "graphic_path": "https://img.icons8.com/?size=100&id=25131&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=25131&format=png&color=D1CCC5"
   },
   {
     "scene_id": 5,
@@ -47,7 +47,7 @@
     "left_scene_id": 9,
     "right_scene_name": "Kitchen",
     "right_scene_id": 4,
-    "graphic_path": "https://img.icons8.com/?size=100&id=88539&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=88539&format=png&color=D1CCC5"
   },
   {
     "scene_id": 6,
@@ -57,7 +57,7 @@
     "left_scene_id": 4,
     "right_scene_name": "Spare Bedroom",
     "right_scene_id": 7,
-    "graphic_path": "https://img.icons8.com/?size=100&id=66970&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=66970&format=png&color=D1CCC5"
   },
   {
     "scene_id": 7,
@@ -67,7 +67,7 @@
     "left_scene_id": 6,
     "right_scene_name": "Master Bedroom",
     "right_scene_id": 8,
-    "graphic_path": "https://img.icons8.com/?size=100&id=19e67oIqcXCU&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=19e67oIqcXCU&format=png&color=D1CCC5"
   },
   {
     "scene_id": 8,
@@ -75,9 +75,9 @@
     "scene_prompt": "You step carefully into the master bedroom, as this is where Ms. Mangrove was killed just one day ago. There is an air of solemnity in the space. The first thing you see are little yellow cones marking out where not to go and what not to touch. Strangely, the color of the cones perfectly matches the scheme of the room: the curtains, the trim on the walls, accent pillows on the bed, even the flowers on the desk in the corner all share the same brilliant yellow.",
     "left_scene_name": "Spare bedroom",
     "left_scene_id": 7,
-    "right_scene_name": "Guess",
-    "right_scene_id": 777,
-    "graphic_path": "https://img.icons8.com/?size=100&id=8021&format=png&color=000000"
+    "right_scene_name": "Laundry Room",
+    "right_scene_id": 6,
+    "graphic_path": "https://img.icons8.com/?size=100&id=8021&format=png&color=D1CCC5"
   },
   {
     "scene_id": 9,
@@ -87,7 +87,7 @@
     "left_scene_id": 4,
     "right_scene_name": "Dining Room",
     "right_scene_id": 5,
-    "graphic_path": "https://img.icons8.com/?size=100&id=78618&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=78618&format=png&color=D1CCC5"
   },
   {
     "scene_id": 778,
@@ -97,7 +97,7 @@
     "left_scene_id": 1,
     "right_scene_name": null,
     "right_scene_id": 1,
-    "graphic_path": "https://img.icons8.com/?size=100&id=8635&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=8635&format=png&color=D1CCC5"
   },
   {
     "scene_id": 779,
@@ -107,6 +107,6 @@
     "left_scene_id": 1,
     "right_scene_name": null,
     "right_scene_id": 1,
-    "graphic_path": "https://img.icons8.com/?size=100&id=8635&format=png&color=000000"
+    "graphic_path": "https://img.icons8.com/?size=100&id=8635&format=png&color=D1CCC5"
   }
 ]

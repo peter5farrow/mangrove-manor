@@ -9,6 +9,7 @@ import {
 import axios from "axios";
 import App from "./App.jsx";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
 import HomePage from "./pages/HomePage.jsx";
 import SceneLayout from "./pages/SceneLayout.jsx";
 import GuessPage from "./pages/GuessPage.jsx";

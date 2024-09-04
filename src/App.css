@@ -1,54 +1,27 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  background-image: url("../src/assets/SilentMovieCard+HD.png");
+  background-size: cover; /* Optional: Adjust the size of the background image */
+  background-position: 50% 5%; /* Optional: Center the background image */
+  background-repeat: no-repeat; /* Optional: Prevent repeating the image */
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
+#title-bar h1 {
+  color: rgb(209, 204, 197);
   text-align: center;
-
-  /* to be moved */
-  margin: 20px;
+  position: relative;
+  top: 140px;
+  font-family: "Baskervville", serif;
+  font-size: 65px;
+  font-weight: 400;
+  font-style: normal;
 }
 
-#root,
-#__next {
-  isolation: isolate;
-}
-
-/* to be moved */
-#text-box {
+#outlet {
+  color: rgb(209, 204, 197);
   text-align: center;
+  position: relative;
+  font-family: "Baskervville", serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
 }
