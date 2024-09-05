@@ -3,6 +3,8 @@ import Graphic from "../components/Graphic";
 import CharacterButton from "../components/CharacterButton";
 import PromptTextBox from "../components/PromptTextBox";
 import CharactersTab from "../components/CharactersTab";
+import { Container } from "react-bootstrap";
+import "../styles/GuessPageStyle.css";
 
 export default function GuessPage() {
   const { characters } = useLoaderData();
@@ -20,7 +22,7 @@ export default function GuessPage() {
     ({ character_id, first_name, last_name, is_guilty }) => {
       const characterName = `${first_name} ${last_name}`;
       return (
-        <div key={character_id}>
+        <div key={character_id} className="char-button">
           <CharacterButton
             onClick={handleGuess}
             character={characterName}
@@ -34,8 +36,10 @@ export default function GuessPage() {
   return (
     <>
       <Graphic path="https://img.icons8.com/?size=100&id=m0X59wVKxiRO&format=png&color=D1CCC5" />
-      <PromptTextBox prompt="Who do you think committed the crime?" />
-      {characterButtons}
+      <Container id="prompt-cont">
+        <PromptTextBox prompt="Who do you think committed the crime?" />
+        {characterButtons}
+      </Container>
       <CharactersTab characters={characters} />
     </>
   );

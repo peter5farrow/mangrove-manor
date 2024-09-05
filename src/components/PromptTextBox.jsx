@@ -4,10 +4,9 @@ import { useNavigate } from "react-router-dom";
 export default function PromptTextBox({ prompt, sceneId }) {
   const navigate = useNavigate();
   const { guiltyChar, userName } = useGuiltyChar();
-  // if (!guiltyChar) {
-  //   navigate("/scene/1");
-  // }
+
   if (sceneId === 1) {
+    //intro
     return (
       <>
         <div id="promt-template">{`${userName}, there has been a murder! Ms. Mangrove was found dead in her room early this morning, and you have been asked to help find out who is guilty. It won't be easy, but here are some tips to help you on your journey:`}</div>
@@ -27,7 +26,7 @@ export default function PromptTextBox({ prompt, sceneId }) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`The back of the marble countertops are lined with every manner of cooking tool: a toaster oven, a self-grinding coffee maker, four cast iron skillets of different sizes, knives, wooden spoons, ${guiltyChar.job.job_clue}, an old copper tea kettle, a spice rack, and much more. Where will you go next?`}</div>
+        <div id="promt-template">{`The back of the marble countertops are lined with every manner of cooking tool: a toaster oven, a coffee maker, four cast iron skillets of different sizes, knives, wooden spoons, ${guiltyChar.job.job_clue}, an old copper tea kettle, and much more. Where will you go next?`}</div>
       </>
     );
   } else if (sceneId === 5) {
@@ -39,11 +38,11 @@ export default function PromptTextBox({ prompt, sceneId }) {
       </>
     );
   } else if (sceneId === 6) {
-    //laundry room, also food
+    //laundry room, food
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`As you look around, you notice some more paint stains on the floor, as well as ${guiltyChar.food.food_clue}, something that looks like old chewing gum, and a few small pieces of balled up electrical tape. A fly lands on your coat sleeve. Where will you go next?`}</div>
+        <div id="promt-template">{`As you look around, you notice some mud stains on the floor, as well as ${guiltyChar.food.food_clue}, a ball of lint, and a few small pieces of duct tape. A fly lands on your coat sleeve. Where will you go next?`}</div>
       </>
     );
   } else if (sceneId === 7) {
@@ -51,25 +50,45 @@ export default function PromptTextBox({ prompt, sceneId }) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`The spare room feels incredibly cozy. Light pierces through the window as the sun is just beginning to set, bathing the room in a yellow-orange glow. The bed has crisp white sheets (save for a single ${guiltyChar.hair_color} hair) and is topped with a stack of what must be the world’s fluffiest pillows. There is a bookshelf on the north wall filled with old textbooks, most of them covered with a thin veneer of dust. A nail file sits on the bedside table. Where will you go next?
+        <div id="promt-template">{`The spare room feels incredibly cozy. Light pierces through the window as the sun is just beginning to set, bathing the room in a yellow-orange glow. The bed has crisp white sheets (save for a single ${guiltyChar.hair_color} hair) and is topped with a stack of what must be the world’s fluffiest pillows. There is a bookshelf on the north wall filled with old textbooks, most of them covered with a thin veneer of dust. Where will you go next?
 `}</div>
       </>
     );
   } else if (sceneId === 8) {
-    //master bedroom, age
+    //master bedroom, country
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`The next thing you notice is that, other than the flowers, everything on the desk is rather odd. There is a stack of old ticket stubs - presumably from past visits to a movie theater, a keychain with a picture of a mountain in it, ${guiltyChar.country.country_clue}, a pewter figurine of the goddess Aphrodite, an unopened tampon, and a tarnished metal bracelet, among other things. It was all laid out in two neat rows and sorted by size from largest to smallest. Where will you go next?`}</div>
+        <div id="promt-template">{`The next thing you notice is that, other than the flowers, everything on the desk is rather odd. There is a stack of old ticket stubs - presumably from past visits to a movie theater, a keychain with a picture of ${guiltyChar.country.country_clue} on it, an unopened tampon, a small pack of tissues, and a tarnished metal bracelet, among other things. It was all laid out in two neat rows and sorted by size from largest to smallest. Where will you go next?`}</div>
       </>
     );
   } else if (sceneId === 9) {
-    //bathroom
-    //maybe this one is the red herring??
+    //bathroom, red herring?
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
         <div id="promt-template">{`There is a single-file line of perfume bottles atop a shelf hung directly next to the sink. There is also a hairbrush, one loose contact lens, an old wash rag, a candle, and a pack of matches with a single match inside. Where will you go next?
+`}</div>
+      </>
+    );
+  } else if (sceneId === 778) {
+    //success
+    return (
+      <>
+        <div id="ending-text">{`Congratulations ${userName}, you did it!
+`}</div>
+        <div id="promt-template">{`Nice detective work. Thanks to your keen eye, the mystery of Ms. Mangrove’s death will not be in vain.
+`}</div>
+      </>
+    );
+  } else if (sceneId === 779) {
+    //failure
+    return (
+      <>
+        <div id="ending-text">{`Sorry ${userName}, wrong answer…
+`}</div>
+        <div id="promt-template">{`Unfortunately the perpetrator got away this time. Better luck with the next case!
+
 `}</div>
       </>
     );

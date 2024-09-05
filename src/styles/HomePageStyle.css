@@ -1,0 +1,44 @@
+#graphic img {
+  margin-top: 12%;
+}
+
+#left-button,
+#right-button {
+  width: max-content;
+}
+
+#prompt-cont {
+  margin-top: 1%;
+  width: 73%;
+}
+
+#name {
+  margin-top: 2%;
+}
+
+#name-submit-button {
+  margin-left: 10px;
+}
+
+/* 
+<uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 400 to 900 */
+/* 
+.cinzel {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.baskervville-regular {
+  font-family: "Baskervville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.baskervville-regular-italic {
+  font-family: "Baskervville", serif;
+  font-weight: 400;
+  font-style: italic;
+} */

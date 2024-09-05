@@ -18,7 +18,9 @@ export default function NameInputBox({ onInput }) {
         required
         onChange={(e) => setName(e.target.value)}
       />
-      <button type="submit">Continue</button>
+      <button type="submit" id="name-submit-button">
+        Continue
+      </button>
     </form>
   );
 }

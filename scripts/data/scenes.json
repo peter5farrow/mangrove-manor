@@ -2,7 +2,7 @@
   {
     "scene_id": 1,
     "scene_name": "Intro",
-    "scene_prompt": "Explore the manor and begin to gather clues. Check the “Characters” tab to compare your notes with information about the other people who were in the house the night of the crime. Once you have enough evidence, click the “Guess” button to guess who is guilty.",
+    "scene_prompt": "Ms. Mangrove hosted a dinner for five of her closest friends the night of the murder. After speaking with each of them, no one seemed to have any reason to do such a thing, and they have all decided to stop talking. Ms. Mangrove was very particular about her belongings, so pay careful attention to each and every object you find in the manor. They may give you the best hints about who’s to blame.",
     "left_scene_name": "Continue",
     "left_scene_id": 2,
     "right_scene_name": null,
@@ -12,7 +12,7 @@
   {
     "scene_id": 2,
     "scene_name": "Setup",
-    "scene_prompt": "Alright, it's time to begin. Let's start in the living room...",
+    "scene_prompt": "Explore the manor and begin to gather clues. Check the “Characters” tab to compare your notes with information about the other people who were in the house the night of the crime. Once you have enough evidence, click the “Guess” button to guess who is guilty.\nAlright, it's time to begin. Let's start in the living room...",
     "left_scene_name": "Living Room",
     "left_scene_id": 3,
     "right_scene_name": null,
@@ -22,7 +22,7 @@
   {
     "scene_id": 3,
     "scene_name": "Living Room",
-    "scene_prompt": "The living room is large. Soft light streams in through one grand window on the south wall. There are two emerald green armchairs set in front of an oval table made of beautiful dark wood. In one chair sits a woman. She’s small, with black hair that is just beginning to gray. A glass of something bubbly sits on the table in front of her.",
+    "scene_prompt": "The living room is large. Soft light streams in through one grand window on the south wall. There are two emerald green armchairs set in front of an oval table made of beautiful dark wood. In one chair sits a woman. She’s small with long, gray hair. A glass of something bubbly sits on the table in front of her.",
     "left_scene_name": "Kitchen",
     "left_scene_id": 4,
     "right_scene_name": "Dining Room",
@@ -52,7 +52,7 @@
   {
     "scene_id": 6,
     "scene_name": "Laundry Room",
-    "scene_prompt": "The laundry room is small and stuffy. It is so far the only room that feels as if it belongs in a different house. There is a washing machine and a dryer stacked on top of one another, and a large sink with paint stains in the bottom. It smells faintly of bleach.",
+    "scene_prompt": "The laundry room is small and stuffy. It is so far the only room that feels as if it belongs in a different house. There is a washing machine and a dryer stacked on top of one another, and a large sink in the opposite corner. It smells faintly of bleach.",
     "left_scene_name": "Kitchen",
     "left_scene_id": 4,
     "right_scene_name": "Spare Bedroom",
@@ -92,7 +92,7 @@
   {
     "scene_id": 778,
     "scene_name": "Success",
-    "scene_prompt": "Congratulations! You did it!",
+    "scene_prompt": "",
     "left_scene_name": "Play Again",
     "left_scene_id": 1,
     "right_scene_name": null,
@@ -102,7 +102,7 @@
   {
     "scene_id": 779,
     "scene_name": "Failure",
-    "scene_prompt": "Wrong answer, better luck next time.",
+    "scene_prompt": "",
     "left_scene_name": "Play Again",
     "left_scene_id": 1,
     "right_scene_name": null,

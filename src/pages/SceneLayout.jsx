@@ -26,13 +26,7 @@ export default function SceneLayout() {
   } = useLoaderData();
 
   const navigate = useNavigate();
-  const { guiltyChar, setGuiltyChar, userName } = useGuiltyChar();
-
-  // const getRandomClue = async () => {
-  //   const res = await axios.get(`/api/food/${lodash.random(1, 5)}`);
-  //   console.log(res.data);
-  //   return res.data;
-  // };
+  const { guiltyChar, setGuiltyChar } = useGuiltyChar();
 
   const handleSceneChange = async (scene_id) => {
     if (scene_id === 1) {
@@ -62,6 +56,11 @@ export default function SceneLayout() {
     navigate("/guess");
   };
 
+  // TO ADD: fix refresh bug
+  // if (!guiltyChar) {
+  //   return;
+  // }
+
   if (scene_id != 1 && scene_id != 2 && scene_id != 778 && scene_id != 779) {
     return (
       <>
@@ -87,8 +86,8 @@ export default function SceneLayout() {
             />
           </Container>
 
-          <CharactersTab characters={characters} />
           <GuessButton onLastScene={handleLastScene} />
+          <CharactersTab characters={characters} />
         </Container>
       </>
     );

@@ -1,0 +1,38 @@
+#graphic img {
+  margin-top: 12%;
+}
+
+#left-button,
+#right-button {
+  width: max-content;
+}
+
+#prompt-cont {
+  margin-top: 1%;
+  width: 73%;
+}
+
+#buttons-cont {
+  margin-top: 2%;
+}
+
+#buttons-cont button {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#guess-button {
+  position: fixed;
+  bottom: 6%;
+  left: 12%;
+}
+
+#characters-button {
+  position: fixed;
+  bottom: 6%;
+  right: 12%;
+}
+
+#ending-text {
+  font-size: 30px;
+}
