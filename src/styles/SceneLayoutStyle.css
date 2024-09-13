@@ -1,5 +1,5 @@
 #graphic img {
-  margin-top: 12%;
+  margin-top: 21vh;
 }
 
 #left-button,
@@ -19,6 +19,7 @@
 #buttons-cont button {
   margin-left: 6px;
   margin-right: 6px;
+  margin-bottom: 50px;
 }
 
 #guess-button {

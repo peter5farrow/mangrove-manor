@@ -8,7 +8,7 @@ import axios from "axios";
 import lodash from "lodash";
 import { useGuiltyChar } from "../contexts/GuiltyCharContext";
 import GuessButton from "../components/GuessButton";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "../styles/SceneLayoutStyle.css";
 
 export default function SceneLayout() {
@@ -23,13 +23,20 @@ export default function SceneLayout() {
       graphic_path,
     },
     characters,
+    guiltyCharacterFromDB,
   } = useLoaderData();
 
   const navigate = useNavigate();
   const { guiltyChar, setGuiltyChar } = useGuiltyChar();
 
+  // HELP HERE
+  if (!guiltyChar) {
+    setGuiltyChar(guiltyCharacterFromDB);
+  }
+
   const handleSceneChange = async (scene_id) => {
     if (scene_id === 1) {
+      //resets all characters to not guilty
       const res = await axios.post("/api/allcharacters", {
         isGuilty: false,
       });
@@ -38,11 +45,13 @@ export default function SceneLayout() {
         setGuiltyChar(null);
       }
     } else if (scene_id === 2) {
+      //sets one random character to guilty
       const res = await axios.post("/api/characters", {
         characterId: lodash.random(1, 5),
       });
       if (res.data) {
         const res2 = await axios.get("/api/guiltychar");
+        // for testing:
         console.log(res2.data);
         setGuiltyChar(res2.data);
       }
@@ -56,11 +65,6 @@ export default function SceneLayout() {
     navigate("/guess");
   };
 
-  // TO ADD: fix refresh bug
-  // if (!guiltyChar) {
-  //   return;
-  // }
-
   if (scene_id != 1 && scene_id != 2 && scene_id != 778 && scene_id != 779) {
     return (
       <>
@@ -69,7 +73,7 @@ export default function SceneLayout() {
             <Graphic path={graphic_path} />
           </Container>
 
-          <Container id="prompt-cont">
+          <Container fluid id="prompt-cont">
             <PromptTextBox sceneId={scene_id} prompt={scene_prompt} />
           </Container>
 

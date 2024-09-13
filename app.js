@@ -114,8 +114,7 @@ app.get("/api/guiltychar", async (req, res) => {
     },
   });
 
-  req.session.guiltyChar = guiltyChar;
-  res.json(req.session.guiltyChar);
+  res.json(guiltyChar);
 });
 
 //get all clues for all characters

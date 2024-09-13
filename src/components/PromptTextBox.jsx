@@ -1,16 +1,15 @@
 import { useGuiltyChar } from "../contexts/GuiltyCharContext";
-import { useNavigate } from "react-router-dom";
+
+//holds the part of the scene prompt that changes based on the guilty character
 
 export default function PromptTextBox({ prompt, sceneId }) {
-  const navigate = useNavigate();
   const { guiltyChar, userName } = useGuiltyChar();
-
   if (sceneId === 1) {
     //intro
     return (
       <>
-        <div id="promt-template">{`${userName}, there has been a murder! Ms. Mangrove was found dead in her room early this morning, and you have been asked to help find out who is guilty. It won't be easy, but here are some tips to help you on your journey:`}</div>
-        <div id="prompt-text-box">{prompt}</div>
+        <div id="prompt-text-box">{`${userName}, there has been a murder! Ms. Mangrove was found dead in her room early this morning, and you have been asked to help find out who is guilty. It won't be easy, but here are some tips to help you on your journey:`}</div>
+        <div id="prompt-template">{prompt}</div>
       </>
     );
   } else if (sceneId === 3) {
@@ -50,7 +49,7 @@ export default function PromptTextBox({ prompt, sceneId }) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`The spare room feels incredibly cozy. Light pierces through the window as the sun is just beginning to set, bathing the room in a yellow-orange glow. The bed has crisp white sheets (save for a single ${guiltyChar.hair_color} hair) and is topped with a stack of what must be the world’s fluffiest pillows. There is a bookshelf on the north wall filled with old textbooks, most of them covered with a thin veneer of dust. Where will you go next?
+        <div id="promt-template">{`The spare room feels incredibly cozy. Light pierces through the window as the sun is just beginning to set, bathing the room in a yellow-orange glow. The bed has crisp white sheets (save for a single ${guiltyChar.hair_color} hair) and is topped with a stack of what must be the world’s fluffiest pillows. There is a bookshelf on the north wall filled with old books, most of them covered with a thin veneer of dust. Where will you go next?
 `}</div>
       </>
     );
@@ -59,7 +58,7 @@ export default function PromptTextBox({ prompt, sceneId }) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`The next thing you notice is that, other than the flowers, everything on the desk is rather odd. There is a stack of old ticket stubs - presumably from past visits to a movie theater, a keychain with a picture of ${guiltyChar.country.country_clue} on it, an unopened tampon, a small pack of tissues, and a tarnished metal bracelet, among other things. It was all laid out in two neat rows and sorted by size from largest to smallest. Where will you go next?`}</div>
+        <div id="promt-template">{`The next thing you notice is that, other than the flowers, everything on the desk is rather odd. There is a stack of old ticket stubs - presumably from past visits to a movie theater, a keychain with a picture of ${guiltyChar.country.country_clue} on it, a small pack of tissues, and a tarnished metal bracelet, among other things. It was all laid out in two neat rows and sorted by size from largest to smallest. Where will you go next?`}</div>
       </>
     );
   } else if (sceneId === 9) {
@@ -67,7 +66,7 @@ export default function PromptTextBox({ prompt, sceneId }) {
     return (
       <>
         <div id="prompt-text-box">{prompt}</div>
-        <div id="promt-template">{`There is a single-file line of perfume bottles atop a shelf hung directly next to the sink. There is also a hairbrush, one loose contact lens, an old wash rag, a candle, and a pack of matches with a single match inside. Where will you go next?
+        <div id="promt-template">{`There is a line of perfume bottles atop a shelf hung directly next to the sink. There is also a hairbrush, a washcloth, a candle, and a pack of matches with a single match inside. Where will you go next?
 `}</div>
       </>
     );

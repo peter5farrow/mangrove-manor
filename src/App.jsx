@@ -1,23 +1,19 @@
 import { Outlet } from "react-router-dom";
-import TitleBar from "./components/TitleBar";
 import "./App.css";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
     <>
-      <Container id="title-bar">
-        <Row>
-          <TitleBar />
-        </Row>
-      </Container>
-      <Container id="outlet">
-        <Row>
+      <div id="bg-img-cont">
+        <Container id="title-bar-cont">
+          <h1>Mangrove Manor</h1>
+        </Container>
+
+        <Container id="outlet-cont">
           <Outlet />
-        </Row>
-      </Container>
+        </Container>
+      </div>
     </>
   );
 }

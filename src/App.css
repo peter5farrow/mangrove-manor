@@ -1,25 +1,30 @@
 body {
-  background-image: url("../src/assets/SilentMovieCard+HD.png");
-  background-size: cover; /* Optional: Adjust the size of the background image */
-  background-position: 50% 5%; /* Optional: Center the background image */
-  background-repeat: no-repeat; /* Optional: Prevent repeating the image */
+  height: 100%;
 }
 
-#title-bar h1 {
+#bg-img-cont {
+  background-image: url("../src/assets/SilentMovieCard+HD.png");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+#title-bar-cont h1 {
   color: rgb(209, 204, 197);
   text-align: center;
-  position: relative;
-  top: 140px;
   font-family: "Cinzel", serif;
   font-size: 65px;
   font-weight: 400;
   font-style: normal;
+  position: relative;
+  top: 20vh;
 }
 
-#outlet {
+#outlet-cont {
   color: rgb(209, 204, 197);
   text-align: center;
-  position: relative;
   font-family: "Cinzel", serif;
   font-size: 19px;
   font-weight: 400;

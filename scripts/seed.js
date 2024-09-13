@@ -106,6 +106,8 @@ const charactersInDB = await Promise.all(
     return newChar;
   })
 );
+
+//for confirmation
 console.log(foodsInDB);
 console.log(jobsInDB);
 console.log(countriesInDB);

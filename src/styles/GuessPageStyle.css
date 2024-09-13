@@ -3,12 +3,12 @@
   width: 73%;
 }
 
-#characters-button {
+/* #characters-button {
   width: max-content;
   position: fixed;
   bottom: 6%;
   right: 12%;
-}
+} */
 
 .char-button {
   margin-top: 1%;

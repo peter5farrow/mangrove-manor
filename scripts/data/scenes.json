@@ -2,7 +2,7 @@
   {
     "scene_id": 1,
     "scene_name": "Intro",
-    "scene_prompt": "Ms. Mangrove hosted a dinner for five of her closest friends the night of the murder. After speaking with each of them, no one seemed to have any reason to do such a thing, and they have all decided to stop talking. Ms. Mangrove was very particular about her belongings, so pay careful attention to each and every object you find in the manor. They may give you the best hints about who’s to blame.",
+    "scene_prompt": "Ms. Mangrove hosted a dinner for five of her closest friends the night of the murder. After speaking with each of them, no one seemed to have any reason to do such a thing, and they all have decided to stop talking. Ms. Mangrove was very particular about her belongings, so pay careful attention to each and every object you find in the manor. They may give you the best hints about who’s to blame.",
     "left_scene_name": "Continue",
     "left_scene_id": 2,
     "right_scene_name": null,
@@ -42,7 +42,7 @@
   {
     "scene_id": 5,
     "scene_name": "Dining Room",
-    "scene_prompt": "There is a large table at the center of the room with 8 chairs surrounding it. It looks to be made from the same wood as the coffee table. A tall, middle-aged woman sits in the chair farthest from the door. Her eyes dart around the room uncomfortably, meeting yours only for a moment as you first enter. In front of her there is a notepad and a pen. It is open to a page that is blank except for one line, written too small to read from where you stand. At the center of the table, there is an ornate gold stand holding one large pineapple.",
+    "scene_prompt": "There is a large table at the center of the room with 8 chairs surrounding it. It looks to be made from the same wood as the coffee table. A tall, middle-aged woman sits in the chair farthest from the door. Her eyes dart around the room uncomfortably, meeting yours only for a moment as you first enter. In front of her there is a notepad and a pen. At the center of the table, there is an ornate gold stand holding one large pineapple.",
     "left_scene_name": "Bathroom",
     "left_scene_id": 9,
     "right_scene_name": "Kitchen",

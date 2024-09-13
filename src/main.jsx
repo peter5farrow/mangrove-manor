@@ -25,7 +25,12 @@ const router = createBrowserRouter(
         loader={async ({ params }) => {
           const res = await axios.get(`/api/scenes/${params.sceneId}`);
           const res2 = await axios.get("/api/characters");
-          return { scene: res.data, characters: res2.data };
+          const res3 = await axios.get("/api/guiltychar");
+          return {
+            scene: res.data,
+            characters: res2.data,
+            guiltyCharacterFromDB: res3.data,
+          };
         }}
       />
       <Route

@@ -1,5 +1,7 @@
 import { useContext, useState, createContext } from "react";
 
+//for passing guilty character (and player's name) to necessary components
+
 const GuiltyCharCoxtext = createContext();
 
 export const GuiltyCharProvider = ({ children }) => {
