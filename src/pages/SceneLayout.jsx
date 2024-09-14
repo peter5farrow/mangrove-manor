@@ -23,16 +23,10 @@ export default function SceneLayout() {
       graphic_path,
     },
     characters,
-    guiltyCharacterFromDB,
   } = useLoaderData();
 
   const navigate = useNavigate();
   const { guiltyChar, setGuiltyChar } = useGuiltyChar();
-
-  // HELP HERE
-  if (!guiltyChar) {
-    setGuiltyChar(guiltyCharacterFromDB);
-  }
 
   const handleSceneChange = async (scene_id) => {
     if (scene_id === 1) {
