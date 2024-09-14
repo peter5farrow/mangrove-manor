@@ -50,6 +50,7 @@ export default function SceneLayout() {
         characterId: lodash.random(1, 5),
       });
       if (res.data) {
+        //gets guilty character with clues
         const res2 = await axios.get("/api/guiltychar");
         // for testing:
         console.log(res2.data);
