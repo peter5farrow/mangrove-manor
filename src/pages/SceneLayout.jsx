@@ -46,8 +46,6 @@ export default function SceneLayout() {
       if (res.data) {
         //gets guilty character with clues
         const res2 = await axios.get("/api/guiltychar");
-        // for testing:
-        console.log(res2.data);
         setGuiltyChar(res2.data);
       }
     } else if (!guiltyChar) {
